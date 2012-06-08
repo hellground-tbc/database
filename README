@@ -10,3 +10,4 @@ updates - contains updates to specific database
 Changes linked with core will be still named as HG_corerev_*.sql
 For DB only changes that do NOT require core changes mark as: DB_dbrev_table.sql 
 
+db_revision file contains informations about actuality of world.sql DB file
