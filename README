@@ -5,6 +5,7 @@ dbcs - can contain dbc files converted to sql format for simplier access (can be
 structures - contains sql files with databases structures updated to specific core revision (rev number is in struct_revisions text file)
 tools - contains various sql tools
 updates - contains updates to specific database
+updates/*/old  - contains already applied updates to the base file (structures/*.sql or world.sql)
 
 
 Changes linked with core will be still named as HG_corerev_*.sql
