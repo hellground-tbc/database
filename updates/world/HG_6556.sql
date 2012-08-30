@@ -1,171 +1,171 @@
 
 UPDATE `command` SET security = 2 WHERE name = 'debug getinstdata';
 
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (59218, 5341, 0, 0, 0, 0, 16967, 530, 0, 1, 4.2532, -1108.02, 4199.97, 16.2024, 5, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (59258, 3889, 0, 0, 0, 0, 16972, 530, 0, 1, 0.354119, -885.254, 2352.51, -5.45177, 5, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (100688, 8, 0, 0, 0, 0, 2620, 1, 0, 0, 1.59893, 16223.2, 16241.1, 14.1142, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (107230, 12000, 0, 0, 0, 0, 27721, 1, 0, 0, 1.53608, 16235.3, 16306.5, 43.8824, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (109043, 11000, 0, 0, 0, 0, 24392, 1, 0, 0, 1.21766, 16233.4, 16306.7, 43.8565, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (191788, 8, 0, 0, 0, 0, 20114, 530, 0, 0, 4.06305, 3912.23, 3872.45, 178.916, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (221620, 2800, 0, 0, 0, 0, 659, 451, 0, 0, 0.159388, 16349.7, 16277.2, 69.4453, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (226218, 32710, 0, 0, 0, 0, 18290, 13, 0, 0, 3.47941, 96.3826, -26.3796, -144.709, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241179, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5675.59, -482.7, 396.1, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241180, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5665.77, -482.89, 396.13, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241181, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5657.33, -483.05, 396.14, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241182, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5646.87, -483.26, 396.24, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241183, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5636.64, -483.45, 396.6, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241184, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5621.14, -483.75, 396.97, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241185, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5606.12, -484.04, 397, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241186, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5593.38, -484.44, 396.99, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241187, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5582.07, -482.68, 397.43, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241188, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5567.66, -482.46, 397.51, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241189, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5550.9, -482.52, 397.47, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241190, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5533.71, -484.39, 397.49, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241191, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5521.69, -493.4, 397.46, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241192, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5516.5, -506.86, 397.46, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241193, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5503.02, -516.5, 397.46, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241194, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5485.79, -517.1, 397.46, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241195, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5464.67, -517.84, 397.46, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241196, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5437.45, -517.21, 396.3, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241197, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5420.85, -516.58, 394.35, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241198, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5401.44, -515.84, 392.14, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241199, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5376.69, -520.61, 391.52, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241200, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5352.54, -520.02, 391.49, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241201, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5328.3, -515.07, 391.62, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241202, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5352.54, -520.02, 391.49, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241203, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5376.69, -520.61, 391.52, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241204, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5401.44, -515.84, 392.14, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241205, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5420.85, -516.58, 394.35, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241206, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5437.45, -517.21, 396.3, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241207, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5464.67, -517.84, 397.46, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241208, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5485.79, -517.1, 397.46, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241209, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5503.02, -516.5, 397.46, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241210, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5516.5, -506.86, 397.46, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241211, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5521.69, -493.4, 397.46, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241212, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5533.71, -484.39, 397.49, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241213, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5550.9, -482.52, 397.47, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241214, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5567.66, -482.46, 397.51, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241215, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5582.07, -482.68, 397.43, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241216, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5593.38, -484.44, 396.99, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241217, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5606.12, -484.04, 397, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241218, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5621.14, -483.75, 396.97, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241219, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5636.64, -483.45, 396.6, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241220, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5646.87, -483.26, 396.24, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241221, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5657.33, -483.05, 396.14, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (241222, 8, 0, 0, 0, 0, 1, 13, 0, 0, 4.28208, -5665.77, -482.89, 396.13, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (243250, 7800, 3200, 0, 0, 0, 8906, 230, 0, 0, 3.04226, 793.394, -10.1278, -53.7347, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (243965, 8000, 3200, 0, 0, 0, 8906, 230, 0, 0, 2.82759, 781.077, -9.6872, -53.7347, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (244089, 8000, 3200, 0, 0, 0, 8906, 230, 0, 0, 2.51736, 779.273, 44.9887, -53.7352, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (261562, 2672, 0, 0, 0, 1375, 12046, 1, 0, 0, 0.939243, -8534.47, -3082.57, 8.78272, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (269932, 7800, 3200, 0, 0, 0, 8906, 230, 0, 0, 0.0286767, 851.325, 13.401, -53.7253, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (271093, 7800, 3200, 0, 0, 0, 8906, 230, 0, 0, 0.961714, 806.828, 52.0552, -53.6551, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (271310, 8000, 3200, 0, 0, 0, 8906, 230, 0, 0, 4.81408, 789.133, -42.0008, -53.7344, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (274023, 7600, 0, 0, 0, 0, 8905, 230, 0, 0, 4.65384, 813.535, -353.414, -50.5781, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (274097, 7600, 0, 0, 0, 0, 8905, 230, 0, 0, 6.25212, 820.371, -348.75, -50.5781, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (274125, 7600, 0, 0, 0, 0, 8905, 230, 0, 0, 1.34731, 813.923, -342.25, -50.5781, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (274197, 7600, 0, 0, 0, 0, 8905, 230, 0, 0, 3.13017, 808.356, -345.703, -50.578, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (274958, 7599, 0, 0, 0, 0, 8907, 230, 0, 0, 2.59766, 856.343, 18.2916, -53.7123, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (353884, 69860, 0, 0, 0, 0, 24994, 530, 0, 0, 5.05726, 12657, -6976.65, 36.2316, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (354323, 69860, 0, 0, 0, 0, 24994, 530, 0, 0, 0.1754, 12646.7, -7002.38, 20.8444, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (356613, 69860, 0, 0, 0, 0, 24994, 530, 0, 0, 4.43086, 12659.4, -6959.09, 14.0202, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (363229, 69860, 0, 0, 0, 0, 24994, 530, 0, 0, 1.34567, 12669.5, -7027.14, 22.1267, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (364100, 69860, 0, 0, 0, 2122, 26253, 530, 0, 0, 3.74467, 12686.8, -6955.15, 25.5109, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (364257, 69860, 0, 0, 0, 2122, 26253, 530, 0, 0, 0.653692, 12679.4, -6960.52, 25.5109, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (367827, 69860, 0, 0, 0, 0, 24994, 530, 0, 0, 1.1354, 12819, -7033.81, 18.5929, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (368102, 69860, 0, 0, 0, 0, 24994, 530, 0, 0, 3.97549, 12840.3, -7000.14, 18.6092, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (369648, 69860, 0, 0, 0, 2122, 26253, 530, 0, 0, 2.29317, 12698.5, -6989.12, 25.7573, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (369855, 69860, 0, 0, 0, 2122, 26253, 530, 0, 0, 1.37993, 12675.3, -6995.97, 30.3816, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (370547, 69860, 0, 0, 0, 0, 24994, 530, 0, 0, 3.80663, 12704.5, -6942.45, 36.2333, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (370616, 69860, 0, 0, 0, 0, 24994, 530, 0, 0, 2.2402, 12698.6, -6978.7, 36.2332, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (371874, 7800, 3200, 0, 0, 0, 8906, 13, 0, 0, 2.0107, -122.484, 127.256, -144.709, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (388031, 69860, 0, 0, 0, 2122, 26253, 530, 0, 0, 0.0797331, 12660.8, -6987.2, 14.5687, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (388050, 69860, 0, 0, 0, 2122, 26253, 530, 0, 0, 3.1406, 12667.6, -6987.87, 14.7879, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (388866, 69860, 0, 0, 0, 0, 24994, 530, 0, 0, 1.79151, 12694.7, -7020.92, 20.1368, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (501409, 8, 0, 0, 0, 0, 17213, 1, 0, 0, 5.18354, 16255.1, 16315.6, 12.9217, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (502774, 8, 0, 0, 0, 0, 3681, 13, 0, 0, 3.51785, 24.01, 7.75721, -144.709, 0, 1, 300);
-INSERT INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
+REPLACE INTO `creature` (guid, curhealth, curmana, currentwaypoint, DeathState, equipment_id, id, map, modelid, MovementType, orientation, position_x, position_y, position_z, spawndist, spawnMask, spawntimesecs)
 VALUES (503941, 8, 0, 0, 0, 0, 17213, 13, 0, 0, 2.8691, -119.897, 79.5525, -144.709, 0, 1, 300);
 
 UPDATE `creature` SET curhealth = 2200 WHERE guid = 1034;
@@ -291,23 +291,23 @@ UPDATE `game_event` SET occurence = 5184000 WHERE entry = 131;
 UPDATE `game_event` SET occurence = 1400 WHERE entry = 133;
 UPDATE `game_event` SET occurence = 5184000 WHERE entry = 136;
 
-INSERT INTO `game_event_gameobject` (event, guid)
+REPLACE INTO `game_event_gameobject` (event, guid)
 VALUES (1, 11054583);
-INSERT INTO `game_event_gameobject` (event, guid)
+REPLACE INTO `game_event_gameobject` (event, guid)
 VALUES (1, 11054584);
 
 DELETE FROM `game_event_gameobject` WHERE event = 1 AND guid = 11012278;
 DELETE FROM `game_event_gameobject` WHERE event = 1 AND guid = 11012279;
 
-INSERT INTO `gameobject` (guid, animprogress, id, map, orientation, position_x, position_y, position_z, rotation0, rotation1, rotation2, rotation3, spawnMask, spawntimesecs, state)
+REPLACE INTO `gameobject` (guid, animprogress, id, map, orientation, position_x, position_y, position_z, rotation0, rotation1, rotation2, rotation3, spawnMask, spawntimesecs, state)
 VALUES (11054583, 100, 188129, 530, 6.2397, 9802.68, -7253.88, 26.2013, 0, 0, 0.0217389, -0.999764, 1, 180, 1);
-INSERT INTO `gameobject` (guid, animprogress, id, map, orientation, position_x, position_y, position_z, rotation0, rotation1, rotation2, rotation3, spawnMask, spawntimesecs, state)
+REPLACE INTO `gameobject` (guid, animprogress, id, map, orientation, position_x, position_y, position_z, rotation0, rotation1, rotation2, rotation3, spawnMask, spawntimesecs, state)
 VALUES (11054584, 100, 188128, 530, 6.27191, -3793.16, -11506.3, -134.746, 0, 0, 0.00563705, -0.999984, 1, 180, 1);
-INSERT INTO `gameobject` (guid, animprogress, id, map, orientation, position_x, position_y, position_z, rotation0, rotation1, rotation2, rotation3, spawnMask, spawntimesecs, state)
+REPLACE INTO `gameobject` (guid, animprogress, id, map, orientation, position_x, position_y, position_z, rotation0, rotation1, rotation2, rotation3, spawnMask, spawntimesecs, state)
 VALUES (11165506, 0, 184719, 13, 1.91327, -120.166, 75.8932, -144.709, 0, 0, 0.817257, 0.576274, 1, 25, 1);
-INSERT INTO `gameobject` (guid, animprogress, id, map, orientation, position_x, position_y, position_z, rotation0, rotation1, rotation2, rotation3, spawnMask, spawntimesecs, state)
+REPLACE INTO `gameobject` (guid, animprogress, id, map, orientation, position_x, position_y, position_z, rotation0, rotation1, rotation2, rotation3, spawnMask, spawntimesecs, state)
 VALUES (11170673, 0, 101768, 451, 0, 16260.2, 16245, 69.4453, 0, 0, 0, 1, 1, 25, 1);
-INSERT INTO `gameobject` (guid, animprogress, id, map, orientation, position_x, position_y, position_z, rotation0, rotation1, rotation2, rotation3, spawnMask, spawntimesecs, state)
+REPLACE INTO `gameobject` (guid, animprogress, id, map, orientation, position_x, position_y, position_z, rotation0, rotation1, rotation2, rotation3, spawnMask, spawntimesecs, state)
 VALUES (11170679, 0, 101768, 451, 4.86707, 16243.6, 16248.1, 69.4445, 0, 0, 0.65036, -0.759626, 1, 25, 1);
 
 DELETE FROM `gameobject` WHERE guid = 1390061;
@@ -326,29 +326,29 @@ UPDATE `gameobject_template` SET data3 = 0 WHERE entry = 186667;
 UPDATE `gameobject_template` SET data3 = 0 WHERE entry = 186672;
 UPDATE `gameobject_template` SET data3 = 0 WHERE entry = 187021;
 
-INSERT INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
+REPLACE INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
 VALUES (26300, 6948, 2283, 0, 0);
-INSERT INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
+REPLACE INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
 VALUES (26300, 34014, 1758, 0, 0);
-INSERT INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
+REPLACE INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
 VALUES (26300, 34988, 2363, 0, 0);
-INSERT INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
+REPLACE INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
 VALUES (26300, 34995, 2363, 0, 0);
-INSERT INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
+REPLACE INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
 VALUES (26300, 35008, 2363, 0, 0);
-INSERT INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
+REPLACE INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
 VALUES (26300, 35016, 2363, 0, 0);
-INSERT INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
+REPLACE INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
 VALUES (26300, 35017, 2363, 0, 0);
-INSERT INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
+REPLACE INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
 VALUES (26300, 35037, 2363, 0, 0);
-INSERT INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
+REPLACE INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
 VALUES (26300, 35038, 2363, 0, 0);
-INSERT INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
+REPLACE INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
 VALUES (26300, 35058, 2363, 0, 0);
-INSERT INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
+REPLACE INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
 VALUES (26300, 35074, 2363, 0, 0);
-INSERT INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
+REPLACE INTO `npc_vendor` (entry, item, ExtendedCost, incrtime, maxcount)
 VALUES (26300, 35095, 2363, 0, 0);
 
 UPDATE `npc_vendor` SET ExtendedCost = 2285 WHERE entry = 24392 AND item = 33661;
@@ -506,12 +506,12 @@ UPDATE `npc_vendor` SET ExtendedCost = 2375 WHERE entry = 27722 AND item = 35110
 UPDATE `npc_vendor` SET ExtendedCost = 2375 WHERE entry = 27722 AND item = 36737;
 
 DELETE FROM `quest_end_scripts` WHERE command = 2 AND dataint = 0 AND datalong = 159 AND datalong2 = 3 AND delay = 38 AND id = 10964 AND o = 0 AND x = 0 AND y = 0 AND z = 0;
-INSERT INTO `quest_end_scripts` (command, dataint, datalong, datalong2, delay, id, o, x, y, z)
+REPLACE INTO `quest_end_scripts` (command, dataint, datalong, datalong2, delay, id, o, x, y, z)
 VALUES (2, 0, 159, 3, 38, 10964, 0, 0, 0, 0);
 
-INSERT INTO `spell_linked_spell` (spell_effect, spell_trigger, type, comment)
+REPLACE INTO `spell_linked_spell` (spell_effect, spell_trigger, type, comment)
 VALUES (30631, -30632, 1, '');
-INSERT INTO `spell_linked_spell` (spell_effect, spell_trigger, type, comment)
+REPLACE INTO `spell_linked_spell` (spell_effect, spell_trigger, type, comment)
 VALUES (44032, -30166, 0, 'Manticron Cube Mind Exhaustion');
 
 UPDATE `spell_linked_spell` SET comment = 'Magtheridon: Cast Mind exhaustion on shadow grasp remove.' WHERE spell_effect = 44032 AND spell_trigger = -30410 AND type = 0;
@@ -519,10 +519,10 @@ UPDATE `spell_linked_spell` SET comment = 'Magtheridon: Cast Mind exhaustion on 
 DELETE FROM `spell_linked_spell` WHERE spell_effect = 0 AND spell_trigger = -30410 AND type = 44032;
 
 DELETE FROM `spell_scripts` WHERE command = 19 AND dataint = 0 AND datalong = 2 AND datalong2 = 0 AND delay = 0 AND id = 38920 AND o = 0 AND x = 0 AND y = 0 AND z = 0;
-INSERT INTO `spell_scripts` (command, dataint, datalong, datalong2, delay, id, o, x, y, z)
+REPLACE INTO `spell_scripts` (command, dataint, datalong, datalong2, delay, id, o, x, y, z)
 VALUES (19, 0, 2, 0, 0, 38920, 0, 0, 0, 0);
 
-INSERT INTO `warden_data_result` (`id`, `address`, `check`, `comment`, `data`, `length`, `result`, `str`)
+REPLACE INTO `warden_data_result` (`id`, `address`, `check`, `comment`, `data`, `length`, `result`, `str`)
 VALUES (1010, 1342508000, 243, 'WowMaelStrom Detect. Need BC Warden mod.', '', 1, '00', '');
 
 UPDATE `waypoint_data` SET wpguid = 241179 WHERE id = 59 AND point = 1;
