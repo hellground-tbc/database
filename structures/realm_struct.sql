@@ -7,7 +7,7 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-/* Core Revision: 6346 */
+/* Core Revision: 6552 */
 
 /*Table structure for table `account` */
 
@@ -142,7 +142,7 @@ CREATE TABLE `realmlist` (
   `timezone` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `allowedSecurityLevel` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `population` float unsigned NOT NULL DEFAULT '0',
-  `realmbuilds` varchar(64) NOT NULL DEFAULT '',
+  `realmbuilds` varchar(64) NOT NULL DEFAULT '8606',
   `dbinfo` varchar(355) NOT NULL DEFAULT 'username;password;3306;127.0.0.1;DBWorld;DBCharacter' COMMENT 'Database info to THIS row',
   `ra_address` varchar(25) NOT NULL DEFAULT '127.0.0.1',
   `ra_port` int(5) NOT NULL DEFAULT '3443',
@@ -150,6 +150,17 @@ CREATE TABLE `realmlist` (
   `ra_pass` varchar(355) NOT NULL DEFAULT 'password',
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Table structure for table `unqueue_account` */
+
+DROP TABLE IF EXISTS `unqueue_account`;
+
+CREATE TABLE `unqueue_account` (
+  `accid` double unsigned NOT NULL,
+  `add_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `comment` text,
+  PRIMARY KEY (`accid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

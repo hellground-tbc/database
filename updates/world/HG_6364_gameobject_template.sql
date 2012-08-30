@@ -1,2 +1,0 @@
-﻿DELETE FROM gameobject_template WHERE entry = 178224;
-INSERT INTO gameobject_template (entry, type, displayId, name, faction, flags, size, data0, data1) VALUES('178224','8','439','Dire Pool','114','32','4','1083','15');
