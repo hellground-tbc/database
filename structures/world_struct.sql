@@ -7,7 +7,7 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-/* Core Revision: 6346 */
+/* Core Revision: 6552 */
 
 /*Table structure for table `access_requirement` */
 
@@ -86,18 +86,6 @@ CREATE TABLE `autobroadcast` (
   `text` longtext NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
-
-/*Table structure for table `battleground_events` */
-
-DROP TABLE IF EXISTS `battleground_events`;
-
-CREATE TABLE `battleground_events` (
-  `map` smallint(5) NOT NULL,
-  `event1` tinyint(3) unsigned NOT NULL,
-  `event2` tinyint(3) unsigned NOT NULL,
-  `description` varchar(255) NOT NULL,
-  PRIMARY KEY (`map`,`event1`,`event2`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `battleground_template` */
 
@@ -179,7 +167,7 @@ CREATE TABLE `creature` (
 DROP TABLE IF EXISTS `creature_addon`;
 
 CREATE TABLE `creature_addon` (
-  `guid` double DEFAULT NULL,
+  `guid` double NOT NULL DEFAULT '0',
   `path_id` double DEFAULT NULL,
   `mount` int(11) DEFAULT NULL,
   `bytes0` double DEFAULT NULL,
@@ -187,7 +175,8 @@ CREATE TABLE `creature_addon` (
   `bytes2` double DEFAULT NULL,
   `emote` double DEFAULT NULL,
   `moveflags` double DEFAULT NULL,
-  `auras` blob
+  `auras` text,
+  PRIMARY KEY (`guid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `creature_ai_scripts` */
@@ -258,17 +247,6 @@ CREATE TABLE `creature_ai_texts` (
   `comment` text,
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Script Texts';
-
-/*Table structure for table `creature_battleground` */
-
-DROP TABLE IF EXISTS `creature_battleground`;
-
-CREATE TABLE `creature_battleground` (
-  `guid` int(10) unsigned NOT NULL COMMENT 'Creature''s GUID',
-  `event1` tinyint(3) unsigned NOT NULL COMMENT 'main event',
-  `event2` tinyint(3) unsigned NOT NULL COMMENT 'sub event',
-  PRIMARY KEY (`guid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Creature battleground indexing system';
 
 /*Table structure for table `creature_equip_template` */
 
@@ -379,24 +357,12 @@ CREATE TABLE `creature_questrelation` (
   PRIMARY KEY (`id`,`quest`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Creature System';
 
-/*Table structure for table `creature_respawn` */
-
-DROP TABLE IF EXISTS `creature_respawn`;
-
-CREATE TABLE `creature_respawn` (
-  `guid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Global Unique Identifier',
-  `respawntime` bigint(20) NOT NULL DEFAULT '0',
-  `instance` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`guid`,`instance`),
-  KEY `instance` (`instance`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Grid Loading System';
-
 /*Table structure for table `creature_template` */
 
 DROP TABLE IF EXISTS `creature_template`;
 
 CREATE TABLE `creature_template` (
-  `entry` int(11) DEFAULT NULL,
+  `entry` int(11) NOT NULL DEFAULT '0',
   `heroic_entry` int(11) DEFAULT NULL,
   `KillCredit` int(11) DEFAULT NULL,
   `modelid_A` int(11) DEFAULT NULL,
@@ -462,7 +428,8 @@ CREATE TABLE `creature_template` (
   `equipment_id` int(11) DEFAULT NULL,
   `mechanic_immune_mask` double DEFAULT NULL,
   `flags_extra` double DEFAULT NULL,
-  `ScriptName` varchar(192) CHARACTER SET latin1 DEFAULT NULL
+  `ScriptName` varchar(192) CHARACTER SET latin1 DEFAULT NULL,
+  PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `creature_template_addon` */
@@ -521,15 +488,6 @@ CREATE TABLE `db_script_string` (
   `content_loc7` text,
   `content_loc8` text,
   PRIMARY KEY (`entry`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-/*Table structure for table `db_version` */
-
-DROP TABLE IF EXISTS `db_version`;
-
-CREATE TABLE `db_version` (
-  `version` varchar(120) CHARACTER SET utf8 COLLATE utf8_czech_ci DEFAULT NULL,
-  UNIQUE KEY `s` (`version`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `disenchant_loot_template` */
@@ -693,7 +651,8 @@ DROP TABLE IF EXISTS `game_event_npc_gossip`;
 CREATE TABLE `game_event_npc_gossip` (
   `guid` int(10) unsigned NOT NULL,
   `event_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `textid` mediumint(8) unsigned NOT NULL DEFAULT '0'
+  `textid` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`guid`,`event_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `game_event_npc_vendor` */
@@ -821,17 +780,7 @@ CREATE TABLE `gameobject` (
   `animprogress` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `state` tinyint(3) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`)
-) ENGINE=InnoDB AUTO_INCREMENT=11176300 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Gameobject System';
-
-/*Table structure for table `gameobject_battleground` */
-
-DROP TABLE IF EXISTS `gameobject_battleground`;
-
-CREATE TABLE `gameobject_battleground` (
-  `guid` double DEFAULT NULL,
-  `event1` tinyint(3) unsigned DEFAULT NULL,
-  `event2` tinyint(3) unsigned DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11012280 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Gameobject System';
 
 /*Table structure for table `gameobject_involvedrelation` */
 
@@ -870,18 +819,6 @@ CREATE TABLE `gameobject_questrelation` (
   PRIMARY KEY (`id`,`quest`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-/*Table structure for table `gameobject_respawn` */
-
-DROP TABLE IF EXISTS `gameobject_respawn`;
-
-CREATE TABLE `gameobject_respawn` (
-  `guid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Global Unique Identifier',
-  `respawntime` bigint(20) NOT NULL DEFAULT '0',
-  `instance` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`guid`,`instance`),
-  KEY `instance` (`instance`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Grid Loading System';
-
 /*Table structure for table `gameobject_scripts` */
 
 DROP TABLE IF EXISTS `gameobject_scripts`;
@@ -904,7 +841,7 @@ CREATE TABLE `gameobject_scripts` (
 DROP TABLE IF EXISTS `gameobject_template`;
 
 CREATE TABLE `gameobject_template` (
-  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `entry` int(11) NOT NULL DEFAULT '0',
   `type` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `displayId` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `name` varchar(100) NOT NULL DEFAULT '',
@@ -941,14 +878,23 @@ CREATE TABLE `gameobject_template` (
   KEY `idx_name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Gameobject System';
 
-/*Table structure for table `guildann_cooldown` */
+/*Table structure for table `hellground_string` */
 
-DROP TABLE IF EXISTS `guildann_cooldown`;
+DROP TABLE IF EXISTS `hellground_string`;
 
-CREATE TABLE `guildann_cooldown` (
-  `guild_id` int(10) unsigned NOT NULL,
-  `cooldown_end` bigint(20) unsigned NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `hellground_string` (
+  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `content_default` text NOT NULL,
+  `content_loc1` text,
+  `content_loc2` text,
+  `content_loc3` text,
+  `content_loc4` text,
+  `content_loc5` text,
+  `content_loc6` text,
+  `content_loc7` text,
+  `content_loc8` text,
+  PRIMARY KEY (`entry`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `instance_template` */
 
@@ -1001,7 +947,7 @@ CREATE TABLE `item_loot_template` (
 DROP TABLE IF EXISTS `item_template`;
 
 CREATE TABLE `item_template` (
-  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `entry` int(11) NOT NULL DEFAULT '0',
   `class` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `subclass` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `unk0` int(11) NOT NULL DEFAULT '-1',
@@ -1489,18 +1435,6 @@ CREATE TABLE `locales_quest` (
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-/*Table structure for table `map_specifics` */
-
-DROP TABLE IF EXISTS `map_specifics`;
-
-CREATE TABLE `map_specifics`(
-  `entry` INT(3) UNSIGNED NOT NULL COMMENT 'MapID',
-  `visibility` FLOAT(3) UNSIGNED DEFAULT '533.0' COMMENT 'VisibilityRadius',
-  `pathfinding` SMALLINT(1) UNSIGNED DEFAULT '6' COMMENT 'PathFinding Prioririty',
-  `lineofsight` SMALLINT(1) UNSIGNED DEFAULT '6' COMMENT 'LineOfSightPrioririty',
-  PRIMARY KEY (`entry`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 /*Table structure for table `npc_gossip` */
 
 DROP TABLE IF EXISTS `npc_gossip`;
@@ -1780,6 +1714,7 @@ CREATE TABLE `playercreateinfo_action` (
   `action` smallint(5) unsigned NOT NULL DEFAULT '0',
   `type` smallint(5) unsigned NOT NULL DEFAULT '0',
   `misc` smallint(5) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`race`,`class`,`button`),
   KEY `playercreateinfo_race_class_index` (`race`,`class`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -1941,7 +1876,7 @@ CREATE TABLE `quest_start_scripts` (
 DROP TABLE IF EXISTS `quest_template`;
 
 CREATE TABLE `quest_template` (
-  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `entry` int(11) NOT NULL DEFAULT '0',
   `Method` tinyint(3) unsigned NOT NULL DEFAULT '2',
   `ZoneOrSort` smallint(6) NOT NULL DEFAULT '0',
   `SkillOrClass` smallint(6) NOT NULL DEFAULT '0',
@@ -1968,7 +1903,7 @@ CREATE TABLE `quest_template` (
   `SrcItemId` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `SrcItemCount` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `SrcSpell` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `Title` text,
+  `Name` text,
   `Details` text,
   `Objectives` text,
   `OfferRewardText` text,
@@ -2116,23 +2051,6 @@ CREATE TABLE `reputation_spillover_template` (
   PRIMARY KEY (`faction`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Reputation spillover reputation gain';
 
-/*Table structure for table `reserved_name` */
-
-DROP TABLE IF EXISTS `reserved_name`;
-
-CREATE TABLE `reserved_name` (
-  `name` varchar(12) NOT NULL DEFAULT '',
-  PRIMARY KEY (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player Reserved Names';
-
-/*Table structure for table `script_db_version` */
-
-DROP TABLE IF EXISTS `script_db_version`;
-
-CREATE TABLE `script_db_version` (
-  `version` varchar(255) NOT NULL DEFAULT '' COMMENT 'Database version string'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC;
-
 /*Table structure for table `script_texts` */
 
 DROP TABLE IF EXISTS `script_texts`;
@@ -2179,7 +2097,7 @@ CREATE TABLE `scripted_event_id` (
   `id` mediumint(8) NOT NULL,
   `ScriptName` char(64) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Script library scripted events';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='Script library scripted events';
 
 /*Table structure for table `scripted_spell_id` */
 
@@ -2189,7 +2107,7 @@ CREATE TABLE `scripted_spell_id` (
   `id` mediumint(8) NOT NULL,
   `ScriptName` char(64) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Script library scripted spells';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='Script library scripted spells';
 
 /*Table structure for table `skill_discovery_template` */
 
@@ -2252,35 +2170,6 @@ CREATE TABLE `spell_affect` (
   PRIMARY KEY (`entry`,`effectId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-/*Table structure for table `spell_dbc` */
-
-DROP TABLE IF EXISTS `spell_dbc`;
-
-CREATE TABLE `spell_dbc` (
-  `id` double DEFAULT NULL,
-  `attributes` varchar(96) CHARACTER SET latin1 DEFAULT NULL,
-  `attributesEx` varchar(96) CHARACTER SET latin1 DEFAULT NULL,
-  `attributesEx2` varchar(96) CHARACTER SET latin1 DEFAULT NULL,
-  `attributesEx3` varchar(96) CHARACTER SET latin1 DEFAULT NULL,
-  `attributesEx4` varchar(96) CHARACTER SET latin1 DEFAULT NULL,
-  `attributesEx5` varchar(96) CHARACTER SET latin1 DEFAULT NULL,
-  `attributesEx6` varchar(96) CHARACTER SET latin1 DEFAULT NULL,
-  `spellFamily` double DEFAULT NULL,
-  `spellFamilyFlags` double DEFAULT NULL,
-  `name` blob
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-/*Table structure for table `spell_disabled` */
-
-DROP TABLE IF EXISTS `spell_disabled`;
-
-CREATE TABLE `spell_disabled` (
-  `entry` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Spell entry',
-  `disable_mask` int(8) unsigned NOT NULL DEFAULT '0',
-  `comment` varchar(64) NOT NULL DEFAULT '',
-  PRIMARY KEY (`entry`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Disabled Spell System';
-
 /*Table structure for table `spell_elixir` */
 
 DROP TABLE IF EXISTS `spell_elixir`;
@@ -2300,7 +2189,8 @@ CREATE TABLE `spell_enchant_proc_data` (
   `customChance` int(10) unsigned NOT NULL DEFAULT '0',
   `PPMChance` float unsigned NOT NULL DEFAULT '0',
   `procFlags` int(10) unsigned NOT NULL DEFAULT '0',
-  `procEx` int(10) unsigned NOT NULL DEFAULT '0'
+  `procEx` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Spell enchant proc data';
 
 /*Table structure for table `spell_learn_spell` */
@@ -2321,7 +2211,8 @@ CREATE TABLE `spell_linked_spell` (
   `spell_trigger` int(10) NOT NULL,
   `spell_effect` int(10) NOT NULL DEFAULT '0',
   `type` smallint(3) unsigned NOT NULL DEFAULT '0',
-  `comment` text NOT NULL
+  `comment` text NOT NULL,
+  PRIMARY KEY (`spell_trigger`,`spell_effect`,`type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `spell_pet_auras` */
@@ -2414,16 +2305,6 @@ CREATE TABLE `spell_threat` (
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED;
 
-/*Table structure for table `temp_ai` */
-
-DROP TABLE IF EXISTS `temp_ai`;
-
-CREATE TABLE `temp_ai` (
-  `entry` smallint(8) NOT NULL,
-  `AIname` tinytext,
-  `ScriptName` tinytext
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 /*Table structure for table `transport_events` */
 
 DROP TABLE IF EXISTS `transport_events`;
@@ -2444,47 +2325,6 @@ CREATE TABLE `transports` (
   `period` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Transports';
-
-/*Table structure for table `trinity_string` */
-
-DROP TABLE IF EXISTS `hellground_string`;
-
-CREATE TABLE `hellground_string` (
-  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `content_default` text NOT NULL,
-  `content_loc1` text,
-  `content_loc2` text,
-  `content_loc3` text,
-  `content_loc4` text,
-  `content_loc5` text,
-  `content_loc6` text,
-  `content_loc7` text,
-  `content_loc8` text,
-  PRIMARY KEY (`entry`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-/*Table structure for table `unqueue_account` */
-
-DROP TABLE IF EXISTS `unqueue_account`;
-
-CREATE TABLE `unqueue_account` (
-  `accid` double unsigned NOT NULL,
-  `add_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `comment` text,
-  UNIQUE KEY `NewIndex1` (`accid`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Table structure for table `uptime` */
-
-DROP TABLE IF EXISTS `uptime`;
-
-CREATE TABLE `uptime` (
-  `starttime` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `startstring` varchar(64) NOT NULL DEFAULT '',
-  `uptime` bigint(20) unsigned NOT NULL DEFAULT '0',
-  `maxplayers` smallint(5) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`starttime`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Uptime system';
 
 /*Table structure for table `version` */
 
@@ -2511,7 +2351,7 @@ CREATE TABLE `warden_data_result` (
   `result` tinytext,
   `comment` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1004 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1011 DEFAULT CHARSET=utf8;
 
 /*Table structure for table `waypoint_data` */
 
@@ -2527,7 +2367,8 @@ CREATE TABLE `waypoint_data` (
   `move_type` tinyint(1) NOT NULL DEFAULT '0',
   `action` int(11) NOT NULL DEFAULT '0',
   `action_chance` smallint(3) NOT NULL DEFAULT '100',
-  `wpguid` int(11) NOT NULL DEFAULT '0'
+  `wpguid` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`,`point`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `waypoint_scripts` */

@@ -7,7 +7,7 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-/* Core Revision: 6346 */
+/* Core Revision: 6552 */
 
 /*Table structure for table `arena_team` */
 
@@ -292,8 +292,8 @@ CREATE TABLE `character_queststatus_daily` (
 DROP TABLE IF EXISTS `character_reputation`;
 
 CREATE TABLE `character_reputation` (
-  `guid` bigint(10) DEFAULT NULL,
-  `faction` bigint(10) DEFAULT NULL,
+  `guid` bigint(10) NOT NULL DEFAULT '0',
+  `faction` bigint(10) NOT NULL DEFAULT '0',
   `standing` bigint(10) DEFAULT NULL,
   `flags` bigint(10) DEFAULT NULL,
   PRIMARY KEY (`guid`,`faction`)
@@ -370,12 +370,12 @@ CREATE TABLE `characters` (
   `name` varchar(12) NOT NULL DEFAULT '',
   `race` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `class` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `gender` tinyint UNSIGNED NOT NULL DEFAULT '0',
-  `xp` int unsigned NOT NULL DEFAULT '0',
-  `money` int unsigned NOT NULL DEFAULT '0',
-  `playerBytes` int unsigned NOT NULL DEFAULT '0',
-  `playerBytes2` int unsigned NOT NULL DEFAULT '0',
-  `playerFlags` INT UNSIGNED NOT NULL default '0',
+  `gender` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `xp` int(10) unsigned NOT NULL DEFAULT '0',
+  `money` int(10) unsigned NOT NULL DEFAULT '0',
+  `playerBytes` int(10) unsigned NOT NULL DEFAULT '0',
+  `playerBytes2` int(10) unsigned NOT NULL DEFAULT '0',
+  `playerFlags` int(10) unsigned NOT NULL DEFAULT '0',
   `level` tinyint(3) unsigned DEFAULT '1',
   `position_x` float NOT NULL DEFAULT '0',
   `position_y` float NOT NULL DEFAULT '0',
@@ -435,6 +435,18 @@ CREATE TABLE `corpse` (
   KEY `instance` (`instance`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+/*Table structure for table `creature_respawn` */
+
+DROP TABLE IF EXISTS `creature_respawn`;
+
+CREATE TABLE `creature_respawn` (
+  `guid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Global Unique Identifier',
+  `respawntime` bigint(20) NOT NULL DEFAULT '0',
+  `instance` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`guid`,`instance`),
+  KEY `instance` (`instance`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+
 /*Table structure for table `deleted_chars` */
 
 DROP TABLE IF EXISTS `deleted_chars`;
@@ -469,6 +481,18 @@ CREATE TABLE `game_event_save` (
   `next_start` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`event_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Table structure for table `gameobject_respawn` */
+
+DROP TABLE IF EXISTS `gameobject_respawn`;
+
+CREATE TABLE `gameobject_respawn` (
+  `guid` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Global Unique Identifier',
+  `respawntime` bigint(20) NOT NULL DEFAULT '0',
+  `instance` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`guid`,`instance`),
+  KEY `instance` (`instance`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
 
 /*Table structure for table `gm_tickets` */
 
@@ -575,6 +599,15 @@ CREATE TABLE `guild` (
   `createdate` datetime DEFAULT NULL,
   `BankMoney` bigint(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`guildid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Table structure for table `guild_announce_cooldown` */
+
+DROP TABLE IF EXISTS `guild_announce_cooldown`;
+
+CREATE TABLE `guild_announce_cooldown` (
+  `guild_id` int(10) unsigned NOT NULL,
+  `cooldown_end` bigint(20) unsigned NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Table structure for table `guild_bank_eventlog` */
@@ -782,6 +815,21 @@ CREATE TABLE `mail` (
   KEY `receiver` (`receiver`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+/*Table structure for table `mail_external` */
+
+DROP TABLE IF EXISTS `mail_external`;
+
+CREATE TABLE `mail_external` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `receiver` bigint(20) unsigned NOT NULL,
+  `subject` varchar(200) DEFAULT 'Support Message',
+  `message` varchar(500) DEFAULT 'Support Message',
+  `money` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `item` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `item_count` bigint(20) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 /*Table structure for table `mail_items` */
 
 DROP TABLE IF EXISTS `mail_items`;
@@ -794,6 +842,28 @@ CREATE TABLE `mail_items` (
   PRIMARY KEY (`mail_id`,`item_guid`),
   KEY `receiver` (`receiver`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Table structure for table `map_template` */
+
+DROP TABLE IF EXISTS `map_template`;
+
+CREATE TABLE `map_template` (
+  `entry` int(3) unsigned NOT NULL COMMENT 'MapID',
+  `visibility` float unsigned DEFAULT '533' COMMENT 'VisibilityRadius',
+  `pathfinding` smallint(1) unsigned DEFAULT '6' COMMENT 'PathFinding Prioririty',
+  `lineofsight` smallint(1) unsigned DEFAULT '6' COMMENT 'LineOfSight Prioririty',
+  PRIMARY KEY (`entry`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Table structure for table `opcodes_cooldown` */
+
+DROP TABLE IF EXISTS `opcodes_cooldown`;
+
+CREATE TABLE `opcodes_cooldown` (
+  `opcode` varchar(20) NOT NULL COMMENT 'Opcode name',
+  `cooldown` int(4) unsigned DEFAULT '1000' COMMENT 'Opcode cooldown',
+  PRIMARY KEY (`opcode`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*Table structure for table `pet_aura` */
 
@@ -861,6 +931,15 @@ CREATE TABLE `petition_sign` (
   PRIMARY KEY (`petitionguid`,`playerguid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+/*Table structure for table `reserved_name` */
+
+DROP TABLE IF EXISTS `reserved_name`;
+
+CREATE TABLE `reserved_name` (
+  `name` varchar(12) NOT NULL DEFAULT '',
+  PRIMARY KEY (`name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Player Reserved Names';
+
 /*Table structure for table `saved_variables` */
 
 DROP TABLE IF EXISTS `saved_variables`;
@@ -874,6 +953,29 @@ CREATE TABLE `saved_variables` (
   `PVPAlliance` int(5) unsigned NOT NULL DEFAULT '0',
   `PVPHorde` int(5) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Table structure for table `spell_disabled` */
+
+DROP TABLE IF EXISTS `spell_disabled`;
+
+CREATE TABLE `spell_disabled` (
+  `entry` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Spell entry',
+  `disable_mask` int(8) unsigned NOT NULL DEFAULT '0',
+  `comment` varchar(64) NOT NULL DEFAULT '',
+  PRIMARY KEY (`entry`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Disabled Spell System';
+
+/*Table structure for table `uptime` */
+
+DROP TABLE IF EXISTS `uptime`;
+
+CREATE TABLE `uptime` (
+  `starttime` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `startstring` varchar(64) NOT NULL DEFAULT '',
+  `uptime` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `maxplayers` smallint(5) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`starttime`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Uptime system';
 
 /* Procedure structure for procedure `PreventCharDelete` */
 
