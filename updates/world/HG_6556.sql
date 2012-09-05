@@ -522,9 +522,6 @@ DELETE FROM `spell_scripts` WHERE command = 19 AND dataint = 0 AND datalong = 2 
 REPLACE INTO `spell_scripts` (command, dataint, datalong, datalong2, delay, id, o, x, y, z)
 VALUES (19, 0, 2, 0, 0, 38920, 0, 0, 0, 0);
 
-REPLACE INTO `warden_data_result` (`id`, `address`, `check`, `comment`, `data`, `length`, `result`, `str`)
-VALUES (1010, 1342508000, 243, 'WowMaelStrom Detect. Need BC Warden mod.', '', 1, '00', '');
-
 UPDATE `waypoint_data` SET wpguid = 241179 WHERE id = 59 AND point = 1;
 UPDATE `waypoint_data` SET wpguid = 241180 WHERE id = 59 AND point = 2;
 UPDATE `waypoint_data` SET wpguid = 241181 WHERE id = 59 AND point = 3;
