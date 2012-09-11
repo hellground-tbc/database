@@ -15,7 +15,7 @@ DELETE cf.* FROM creature_formations cf LEFT JOIN creature c ON cf.memberGUID = 
 
 -- CreatureEventAI: Creature Entry * has EventAI script but it also has C++ script. EventAI script will be overriden.
 UPDATE creature_template SET AIName = '' WHERE ScriptName<>'' AND AIName = 'EventAI';
-DELETE FROM creature_ai_scripts WHERE entryOrGUID > 0 AND entryOrGUID IN(SELECT entry FROM creature_template WHERE AIName <> 'EventAI')
+DELETE FROM creature_ai_scripts WHERE entryOrGUID > 0 AND entryOrGUID IN(SELECT entry FROM creature_template WHERE AIName <> 'EventAI');
 
 -- Table 'creature_loot_template' entry * isn't creature entry and not referenced from loot, and then useless.
 DELETE clt.* FROM creature_loot_template clt LEFT JOIN creature_template ct ON clt.entry = ct.entry WHERE ct.entry IS NULL;
