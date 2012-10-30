@@ -12,3 +12,12 @@ insert ignore into `creature` values
 ('',	22181,	530,	1,	0,	0,	2495.95,	7182.09,	365.893,	3.43771,	120,	3,	0,	5744,	3231,	0,	1),
 ('',	22181,	530,	1,	0,	0,	2530.3,		7211.93,	364.374,	4.39433,	120,	3,	0,	5589,	3155,	0,	1),
 ('',	22181,	530,	1,	0,	0,	2606.85,	7298.33,	364.56,		0.35032,	120,	3,	0,	5589,	3155,	0,	1);
+
+SET @NPC_SIMON_BUNNY           := 22923;
+SET @GO_APEXIS_RELIC           := 185890;
+SET @GO_APEXIS_MONUMENT        := 185944;
+
+UPDATE `creature_template` SET `ScriptName` = 'npc_simon_bunny',`flags_extra` = 130 WHERE `entry` = @NPC_SIMON_BUNNY;
+UPDATE `gameobject_template` SET `ScriptName` = 'go_apexis_relic' WHERE `entry` IN (@GO_APEXIS_MONUMENT,@GO_APEXIS_RELIC);
+-- Update is done via displayid since there are 28 entries for each color
+UPDATE `gameobject_template` SET `flags` = 16,`ScriptName` = 'go_simon_cluster' WHERE `displayId` IN (7364,7365,7366,7367,7369,7371,7373,7375);
