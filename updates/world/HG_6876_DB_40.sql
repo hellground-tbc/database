@@ -1,0 +1,1 @@
+CREATE TABLE `characters`.`character_stats_ro`( `guid` BIGINT(8) UNSIGNED NOT NULL, `honor` BIGINT(8) UNSIGNED NOT NULL, `honorablekills` BIT(8) NOT NULL, PRIMARY KEY (`guid`) ) ENGINE=INNODB;
