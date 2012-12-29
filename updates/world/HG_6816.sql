@@ -1,0 +1,1 @@
+update `gameobject_template` set `ScriptName`='go_silithyst_mound' where `entry`='181597';
