@@ -1,18 +1,27 @@
+-- MySQL dump 10.13  Distrib 5.5.28, for Win64 (x86)
+--
+-- Host: localhost    Database: hg_world2
+-- ------------------------------------------------------
+-- Server version	5.5.28
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
-
-/*!40101 SET SQL_MODE=''*/;
-
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-/* Core Revision: 6552 */
-
-/*Table structure for table `access_requirement` */
+--
+-- Table structure for table `access_requirement`
+--
 
 DROP TABLE IF EXISTS `access_requirement`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `access_requirement` (
   `id` bigint(20) unsigned NOT NULL COMMENT 'Identifier',
   `level_min` tinyint(3) unsigned NOT NULL DEFAULT '0',
@@ -30,41 +39,57 @@ CREATE TABLE `access_requirement` (
   `comment` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Access Requirements';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `areatrigger_involvedrelation` */
+--
+-- Table structure for table `areatrigger_involvedrelation`
+--
 
 DROP TABLE IF EXISTS `areatrigger_involvedrelation`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `areatrigger_involvedrelation` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Identifier',
   `quest` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Quest Identifier',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Trigger System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `areatrigger_scripts` */
+--
+-- Table structure for table `areatrigger_scripts`
+--
 
 DROP TABLE IF EXISTS `areatrigger_scripts`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `areatrigger_scripts` (
   `entry` mediumint(8) NOT NULL,
   `ScriptName` char(64) NOT NULL,
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `areatrigger_tavern` */
+--
+-- Table structure for table `areatrigger_tavern`
+--
 
 DROP TABLE IF EXISTS `areatrigger_tavern`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `areatrigger_tavern` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Identifier',
   `name` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Trigger System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `areatrigger_teleport` */
+--
+-- Table structure for table `areatrigger_teleport`
+--
 
 DROP TABLE IF EXISTS `areatrigger_teleport`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `areatrigger_teleport` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Identifier',
   `name` text,
@@ -76,21 +101,29 @@ CREATE TABLE `areatrigger_teleport` (
   `target_orientation` float NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Trigger System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `autobroadcast` */
+--
+-- Table structure for table `autobroadcast`
+--
 
 DROP TABLE IF EXISTS `autobroadcast`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `autobroadcast` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `text` longtext NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `battleground_template` */
+--
+-- Table structure for table `battleground_template`
+--
 
 DROP TABLE IF EXISTS `battleground_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `battleground_template` (
   `id` mediumint(8) unsigned NOT NULL,
   `MinPlayersPerTeam` smallint(5) unsigned NOT NULL DEFAULT '0',
@@ -103,42 +136,58 @@ CREATE TABLE `battleground_template` (
   `HordeStartO` float NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `battlemaster_entry` */
+--
+-- Table structure for table `battlemaster_entry`
+--
 
 DROP TABLE IF EXISTS `battlemaster_entry`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `battlemaster_entry` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Entry of a creature',
   `bg_template` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Battleground template id',
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `command` */
+--
+-- Table structure for table `command`
+--
 
 DROP TABLE IF EXISTS `command`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `command` (
   `name` varchar(50) NOT NULL DEFAULT '',
   `security` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `help` longtext,
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=FIXED COMMENT='Chat System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `completed_cinematic_scripts` */
+--
+-- Table structure for table `completed_cinematic_scripts`
+--
 
 DROP TABLE IF EXISTS `completed_cinematic_scripts`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `completed_cinematic_scripts` (
   `entry` mediumint(8) NOT NULL,
   `ScriptName` char(64) NOT NULL,
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Script library scripted completed cinematic events';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `creature` */
+--
+-- Table structure for table `creature`
+--
 
 DROP TABLE IF EXISTS `creature`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `creature` (
   `guid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Global Unique Identifier',
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Creature Identifier',
@@ -160,12 +209,16 @@ CREATE TABLE `creature` (
   PRIMARY KEY (`guid`),
   KEY `idx_map` (`map`),
   KEY `idx_id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16777256 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Creature System';
+) ENGINE=InnoDB AUTO_INCREMENT=16777269 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Creature System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `creature_addon` */
+--
+-- Table structure for table `creature_addon`
+--
 
 DROP TABLE IF EXISTS `creature_addon`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `creature_addon` (
   `guid` double NOT NULL DEFAULT '0',
   `path_id` double DEFAULT NULL,
@@ -178,11 +231,15 @@ CREATE TABLE `creature_addon` (
   `auras` text,
   PRIMARY KEY (`guid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `creature_ai_scripts` */
+--
+-- Table structure for table `creature_ai_scripts`
+--
 
 DROP TABLE IF EXISTS `creature_ai_scripts`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `creature_ai_scripts` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Identifier',
   `entryOrGUID` int(11) NOT NULL DEFAULT '0' COMMENT 'Creature Template Identifier',
@@ -209,11 +266,15 @@ CREATE TABLE `creature_ai_scripts` (
   `comment` varchar(255) NOT NULL DEFAULT '' COMMENT 'Event Comment',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=26216002 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='EventAI Scripts';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `creature_ai_summons` */
+--
+-- Table structure for table `creature_ai_summons`
+--
 
 DROP TABLE IF EXISTS `creature_ai_summons`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `creature_ai_summons` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Location Identifier',
   `position_x` float NOT NULL DEFAULT '0',
@@ -224,11 +285,15 @@ CREATE TABLE `creature_ai_summons` (
   `comment` varchar(255) NOT NULL DEFAULT '' COMMENT 'Summon Comment',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='EventAI Summoning Locations';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `creature_ai_texts` */
+--
+-- Table structure for table `creature_ai_texts`
+--
 
 DROP TABLE IF EXISTS `creature_ai_texts`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `creature_ai_texts` (
   `entry` mediumint(8) NOT NULL,
   `content_default` text NOT NULL,
@@ -247,11 +312,15 @@ CREATE TABLE `creature_ai_texts` (
   `comment` text,
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Script Texts';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `creature_equip_template` */
+--
+-- Table structure for table `creature_equip_template`
+--
 
 DROP TABLE IF EXISTS `creature_equip_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `creature_equip_template` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Unique entry',
   `equipmodel1` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -265,11 +334,15 @@ CREATE TABLE `creature_equip_template` (
   `equipslot3` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Creature System (Equipment)';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `creature_formations` */
+--
+-- Table structure for table `creature_formations`
+--
 
 DROP TABLE IF EXISTS `creature_formations`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `creature_formations` (
   `leaderGUID` int(11) unsigned NOT NULL DEFAULT '0',
   `memberGUID` int(11) unsigned NOT NULL DEFAULT '0',
@@ -278,31 +351,43 @@ CREATE TABLE `creature_formations` (
   `groupAI` int(11) unsigned NOT NULL,
   PRIMARY KEY (`memberGUID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `creature_involvedrelation` */
+--
+-- Table structure for table `creature_involvedrelation`
+--
 
 DROP TABLE IF EXISTS `creature_involvedrelation`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `creature_involvedrelation` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Identifier',
   `quest` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Quest Identifier',
   PRIMARY KEY (`id`,`quest`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Creature System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `creature_linked_respawn` */
+--
+-- Table structure for table `creature_linked_respawn`
+--
 
 DROP TABLE IF EXISTS `creature_linked_respawn`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `creature_linked_respawn` (
   `guid` int(10) unsigned NOT NULL COMMENT 'dependent creature',
   `linkedGuid` int(10) unsigned NOT NULL COMMENT 'master creature',
   PRIMARY KEY (`guid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Creature Respawn Link System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `creature_loot_template` */
+--
+-- Table structure for table `creature_loot_template`
+--
 
 DROP TABLE IF EXISTS `creature_loot_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `creature_loot_template` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `item` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -315,11 +400,15 @@ CREATE TABLE `creature_loot_template` (
   `condition_value2` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`,`item`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Loot System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `creature_model_info` */
+--
+-- Table structure for table `creature_model_info`
+--
 
 DROP TABLE IF EXISTS `creature_model_info`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `creature_model_info` (
   `modelid` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `bounding_radius` float NOT NULL DEFAULT '0',
@@ -328,11 +417,15 @@ CREATE TABLE `creature_model_info` (
   `modelid_other_gender` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`modelid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Creature System (Model related info)';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `creature_onkill_reputation` */
+--
+-- Table structure for table `creature_onkill_reputation`
+--
 
 DROP TABLE IF EXISTS `creature_onkill_reputation`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `creature_onkill_reputation` (
   `creature_id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Creature Identifier',
   `RewOnKillRepFaction1` smallint(6) NOT NULL DEFAULT '0',
@@ -346,21 +439,29 @@ CREATE TABLE `creature_onkill_reputation` (
   `TeamDependent` tinyint(3) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`creature_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Creature OnKill Reputation gain';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `creature_questrelation` */
+--
+-- Table structure for table `creature_questrelation`
+--
 
 DROP TABLE IF EXISTS `creature_questrelation`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `creature_questrelation` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Identifier',
   `quest` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Quest Identifier',
   PRIMARY KEY (`id`,`quest`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Creature System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `creature_template` */
+--
+-- Table structure for table `creature_template`
+--
 
 DROP TABLE IF EXISTS `creature_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `creature_template` (
   `entry` int(11) NOT NULL DEFAULT '0',
   `heroic_entry` int(11) DEFAULT NULL,
@@ -431,11 +532,15 @@ CREATE TABLE `creature_template` (
   `ScriptName` varchar(192) CHARACTER SET latin1 DEFAULT NULL,
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `creature_template_addon` */
+--
+-- Table structure for table `creature_template_addon`
+--
 
 DROP TABLE IF EXISTS `creature_template_addon`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `creature_template_addon` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `path_id` int(11) unsigned NOT NULL DEFAULT '0',
@@ -448,11 +553,15 @@ CREATE TABLE `creature_template_addon` (
   `auras` text,
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `custom_texts` */
+--
+-- Table structure for table `custom_texts`
+--
 
 DROP TABLE IF EXISTS `custom_texts`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `custom_texts` (
   `entry` mediumint(8) NOT NULL,
   `content_default` text NOT NULL,
@@ -471,11 +580,15 @@ CREATE TABLE `custom_texts` (
   `comment` text,
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Custom Texts';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `db_script_string` */
+--
+-- Table structure for table `db_script_string`
+--
 
 DROP TABLE IF EXISTS `db_script_string`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `db_script_string` (
   `entry` int(11) unsigned NOT NULL DEFAULT '0',
   `content_default` text NOT NULL,
@@ -489,11 +602,15 @@ CREATE TABLE `db_script_string` (
   `content_loc8` text,
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `disenchant_loot_template` */
+--
+-- Table structure for table `disenchant_loot_template`
+--
 
 DROP TABLE IF EXISTS `disenchant_loot_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `disenchant_loot_template` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Recommended id selection: item_level*100 + item_quality',
   `item` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -506,11 +623,15 @@ CREATE TABLE `disenchant_loot_template` (
   `condition_value2` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`,`item`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Loot System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `event_scripts` */
+--
+-- Table structure for table `event_scripts`
+--
 
 DROP TABLE IF EXISTS `event_scripts`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `event_scripts` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `delay` int(10) unsigned NOT NULL DEFAULT '0',
@@ -523,21 +644,29 @@ CREATE TABLE `event_scripts` (
   `z` float NOT NULL DEFAULT '0',
   `o` float NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `exploration_basexp` */
+--
+-- Table structure for table `exploration_basexp`
+--
 
 DROP TABLE IF EXISTS `exploration_basexp`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `exploration_basexp` (
   `level` tinyint(4) NOT NULL DEFAULT '0',
   `basexp` mediumint(9) NOT NULL DEFAULT '0',
   PRIMARY KEY (`level`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Exploration System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `fishing_loot_template` */
+--
+-- Table structure for table `fishing_loot_template`
+--
 
 DROP TABLE IF EXISTS `fishing_loot_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `fishing_loot_template` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `item` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -550,11 +679,15 @@ CREATE TABLE `fishing_loot_template` (
   `condition_value2` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`,`item`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Loot System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `game_event` */
+--
+-- Table structure for table `game_event`
+--
 
 DROP TABLE IF EXISTS `game_event`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `game_event` (
   `entry` mediumint(8) unsigned NOT NULL COMMENT 'Entry of the game event',
   `start_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT 'Absolute start date, the event will never start before',
@@ -565,21 +698,29 @@ CREATE TABLE `game_event` (
   `world_event` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '0 if normal event, 1 if world event',
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `game_event_battleground_holiday` */
+--
+-- Table structure for table `game_event_battleground_holiday`
+--
 
 DROP TABLE IF EXISTS `game_event_battleground_holiday`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `game_event_battleground_holiday` (
   `event` int(10) unsigned NOT NULL,
   `bgflag` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`event`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `game_event_condition` */
+--
+-- Table structure for table `game_event_condition`
+--
 
 DROP TABLE IF EXISTS `game_event_condition`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `game_event_condition` (
   `event_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `condition_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -589,53 +730,73 @@ CREATE TABLE `game_event_condition` (
   `description` varchar(25) NOT NULL DEFAULT '',
   PRIMARY KEY (`event_id`,`condition_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `game_event_creature` */
+--
+-- Table structure for table `game_event_creature`
+--
 
 DROP TABLE IF EXISTS `game_event_creature`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `game_event_creature` (
   `guid` int(10) unsigned NOT NULL,
   `event` smallint(6) NOT NULL DEFAULT '0' COMMENT 'Put negatives values to remove during event',
   PRIMARY KEY (`guid`,`event`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `game_event_creature_quest` */
+--
+-- Table structure for table `game_event_creature_quest`
+--
 
 DROP TABLE IF EXISTS `game_event_creature_quest`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `game_event_creature_quest` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `quest` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `event` smallint(5) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`quest`,`event`,`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `game_event_gameobject` */
+--
+-- Table structure for table `game_event_gameobject`
+--
 
 DROP TABLE IF EXISTS `game_event_gameobject`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `game_event_gameobject` (
   `guid` int(10) unsigned NOT NULL,
   `event` smallint(6) NOT NULL DEFAULT '0' COMMENT 'Put negatives values to remove during event',
   PRIMARY KEY (`guid`,`event`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `game_event_gameobject_quest` */
+--
+-- Table structure for table `game_event_gameobject_quest`
+--
 
 DROP TABLE IF EXISTS `game_event_gameobject_quest`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `game_event_gameobject_quest` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `quest` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `event` smallint(5) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`quest`,`event`,`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `game_event_model_equip` */
+--
+-- Table structure for table `game_event_model_equip`
+--
 
 DROP TABLE IF EXISTS `game_event_model_equip`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `game_event_model_equip` (
   `guid` int(10) unsigned NOT NULL DEFAULT '0',
   `modelid` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -643,22 +804,30 @@ CREATE TABLE `game_event_model_equip` (
   `event` smallint(5) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `game_event_npc_gossip` */
+--
+-- Table structure for table `game_event_npc_gossip`
+--
 
 DROP TABLE IF EXISTS `game_event_npc_gossip`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `game_event_npc_gossip` (
   `guid` int(10) unsigned NOT NULL,
   `event_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `textid` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`event_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `game_event_npc_vendor` */
+--
+-- Table structure for table `game_event_npc_vendor`
+--
 
 DROP TABLE IF EXISTS `game_event_npc_vendor`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `game_event_npc_vendor` (
   `event` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `guid` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -668,42 +837,58 @@ CREATE TABLE `game_event_npc_vendor` (
   `ExtendedCost` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`item`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `game_event_npcflag` */
+--
+-- Table structure for table `game_event_npcflag`
+--
 
 DROP TABLE IF EXISTS `game_event_npcflag`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `game_event_npcflag` (
   `guid` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `event_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `npcflag` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`,`event_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `game_event_pool` */
+--
+-- Table structure for table `game_event_pool`
+--
 
 DROP TABLE IF EXISTS `game_event_pool`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `game_event_pool` (
   `pool_entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Id of the pool',
   `event` smallint(6) NOT NULL DEFAULT '0' COMMENT 'Put negatives values to remove during event',
   PRIMARY KEY (`pool_entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `game_event_prerequisite` */
+--
+-- Table structure for table `game_event_prerequisite`
+--
 
 DROP TABLE IF EXISTS `game_event_prerequisite`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `game_event_prerequisite` (
   `event_id` mediumint(8) unsigned NOT NULL,
   `prerequisite_event` mediumint(8) unsigned NOT NULL,
   PRIMARY KEY (`event_id`,`prerequisite_event`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `game_event_quest_condition` */
+--
+-- Table structure for table `game_event_quest_condition`
+--
 
 DROP TABLE IF EXISTS `game_event_quest_condition`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `game_event_quest_condition` (
   `quest` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `event_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -711,22 +896,30 @@ CREATE TABLE `game_event_quest_condition` (
   `num` float DEFAULT '0',
   PRIMARY KEY (`quest`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `game_graveyard_zone` */
+--
+-- Table structure for table `game_graveyard_zone`
+--
 
 DROP TABLE IF EXISTS `game_graveyard_zone`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `game_graveyard_zone` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `ghost_zone` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `faction` smallint(5) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`,`ghost_zone`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Trigger System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `game_tele` */
+--
+-- Table structure for table `game_tele`
+--
 
 DROP TABLE IF EXISTS `game_tele`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `game_tele` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `position_x` float NOT NULL DEFAULT '0',
@@ -737,11 +930,15 @@ CREATE TABLE `game_tele` (
   `name` varchar(100) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=587 DEFAULT CHARSET=utf8 COMMENT='Tele Command';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `game_weather` */
+--
+-- Table structure for table `game_weather`
+--
 
 DROP TABLE IF EXISTS `game_weather`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `game_weather` (
   `zone` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `spring_rain_chance` tinyint(3) unsigned NOT NULL DEFAULT '25',
@@ -758,11 +955,15 @@ CREATE TABLE `game_weather` (
   `winter_storm_chance` tinyint(3) unsigned NOT NULL DEFAULT '25',
   PRIMARY KEY (`zone`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Weather System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `gameobject` */
+--
+-- Table structure for table `gameobject`
+--
 
 DROP TABLE IF EXISTS `gameobject`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `gameobject` (
   `guid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Global Unique Identifier',
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Gameobject Identifier',
@@ -780,22 +981,30 @@ CREATE TABLE `gameobject` (
   `animprogress` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `state` tinyint(3) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`)
-) ENGINE=InnoDB AUTO_INCREMENT=11012280 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Gameobject System';
+) ENGINE=InnoDB AUTO_INCREMENT=11170680 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Gameobject System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `gameobject_involvedrelation` */
+--
+-- Table structure for table `gameobject_involvedrelation`
+--
 
 DROP TABLE IF EXISTS `gameobject_involvedrelation`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `gameobject_involvedrelation` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `quest` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Quest Identifier',
   PRIMARY KEY (`id`,`quest`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `gameobject_loot_template` */
+--
+-- Table structure for table `gameobject_loot_template`
+--
 
 DROP TABLE IF EXISTS `gameobject_loot_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `gameobject_loot_template` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `item` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -808,21 +1017,29 @@ CREATE TABLE `gameobject_loot_template` (
   `condition_value2` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`,`item`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Loot System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `gameobject_questrelation` */
+--
+-- Table structure for table `gameobject_questrelation`
+--
 
 DROP TABLE IF EXISTS `gameobject_questrelation`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `gameobject_questrelation` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `quest` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Quest Identifier',
   PRIMARY KEY (`id`,`quest`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `gameobject_scripts` */
+--
+-- Table structure for table `gameobject_scripts`
+--
 
 DROP TABLE IF EXISTS `gameobject_scripts`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `gameobject_scripts` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `delay` int(10) unsigned NOT NULL DEFAULT '0',
@@ -835,11 +1052,15 @@ CREATE TABLE `gameobject_scripts` (
   `z` float NOT NULL DEFAULT '0',
   `o` float NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `gameobject_template` */
+--
+-- Table structure for table `gameobject_template`
+--
 
 DROP TABLE IF EXISTS `gameobject_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `gameobject_template` (
   `entry` int(11) NOT NULL DEFAULT '0',
   `type` tinyint(3) unsigned NOT NULL DEFAULT '0',
@@ -877,11 +1098,15 @@ CREATE TABLE `gameobject_template` (
   PRIMARY KEY (`entry`),
   KEY `idx_name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Gameobject System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `hellground_string` */
+--
+-- Table structure for table `hellground_string`
+--
 
 DROP TABLE IF EXISTS `hellground_string`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `hellground_string` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `content_default` text NOT NULL,
@@ -895,11 +1120,15 @@ CREATE TABLE `hellground_string` (
   `content_loc8` text,
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `instance_template` */
+--
+-- Table structure for table `instance_template`
+--
 
 DROP TABLE IF EXISTS `instance_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `instance_template` (
   `map` smallint(5) unsigned NOT NULL,
   `parent` int(10) unsigned NOT NULL,
@@ -913,22 +1142,30 @@ CREATE TABLE `instance_template` (
   `script` varchar(128) NOT NULL DEFAULT '',
   PRIMARY KEY (`map`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `item_enchantment_template` */
+--
+-- Table structure for table `item_enchantment_template`
+--
 
 DROP TABLE IF EXISTS `item_enchantment_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `item_enchantment_template` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `ench` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `chance` float unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`,`ench`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Item Random Enchantment System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `item_loot_template` */
+--
+-- Table structure for table `item_loot_template`
+--
 
 DROP TABLE IF EXISTS `item_loot_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `item_loot_template` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `item` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -941,11 +1178,15 @@ CREATE TABLE `item_loot_template` (
   `condition_value2` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`,`item`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Loot System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `item_template` */
+--
+-- Table structure for table `item_template`
+--
 
 DROP TABLE IF EXISTS `item_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `item_template` (
   `entry` int(11) NOT NULL DEFAULT '0',
   `class` tinyint(3) unsigned NOT NULL DEFAULT '0',
@@ -1091,11 +1332,15 @@ CREATE TABLE `item_template` (
   KEY `idx_name` (`name`),
   KEY `items_index` (`class`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Item System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `locales_creature` */
+--
+-- Table structure for table `locales_creature`
+--
 
 DROP TABLE IF EXISTS `locales_creature`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `locales_creature` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `name_loc1` varchar(100) NOT NULL DEFAULT '',
@@ -1116,11 +1361,15 @@ CREATE TABLE `locales_creature` (
   `subname_loc8` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `locales_gameobject` */
+--
+-- Table structure for table `locales_gameobject`
+--
 
 DROP TABLE IF EXISTS `locales_gameobject`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `locales_gameobject` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `name_loc1` varchar(100) NOT NULL DEFAULT '',
@@ -1141,11 +1390,15 @@ CREATE TABLE `locales_gameobject` (
   `castbarcaption_loc8` varchar(100) NOT NULL DEFAULT '',
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `locales_item` */
+--
+-- Table structure for table `locales_item`
+--
 
 DROP TABLE IF EXISTS `locales_item`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `locales_item` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `name_loc1` varchar(100) NOT NULL DEFAULT '',
@@ -1166,11 +1419,15 @@ CREATE TABLE `locales_item` (
   `description_loc8` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `locales_npc_option` */
+--
+-- Table structure for table `locales_npc_option`
+--
 
 DROP TABLE IF EXISTS `locales_npc_option`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `locales_npc_option` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `option_text_loc1` text,
@@ -1191,11 +1448,15 @@ CREATE TABLE `locales_npc_option` (
   `box_text_loc8` text,
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `locales_npc_text` */
+--
+-- Table structure for table `locales_npc_text`
+--
 
 DROP TABLE IF EXISTS `locales_npc_text`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `locales_npc_text` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `Text0_0_loc1` longtext,
@@ -1328,11 +1589,15 @@ CREATE TABLE `locales_npc_text` (
   `Text7_1_loc8` longtext,
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `locales_page_text` */
+--
+-- Table structure for table `locales_page_text`
+--
 
 DROP TABLE IF EXISTS `locales_page_text`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `locales_page_text` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `Text_loc1` longtext,
@@ -1345,11 +1610,15 @@ CREATE TABLE `locales_page_text` (
   `Text_loc8` longtext,
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `locales_quest` */
+--
+-- Table structure for table `locales_quest`
+--
 
 DROP TABLE IF EXISTS `locales_quest`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `locales_quest` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `Title_loc1` text,
@@ -1434,32 +1703,44 @@ CREATE TABLE `locales_quest` (
   `ObjectiveText4_loc8` text,
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `npc_gossip` */
+--
+-- Table structure for table `npc_gossip`
+--
 
 DROP TABLE IF EXISTS `npc_gossip`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `npc_gossip` (
   `npc_guid` int(10) unsigned NOT NULL DEFAULT '0',
   `textid` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`npc_guid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `npc_gossip_textid` */
+--
+-- Table structure for table `npc_gossip_textid`
+--
 
 DROP TABLE IF EXISTS `npc_gossip_textid`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `npc_gossip_textid` (
   `zoneid` smallint(5) unsigned NOT NULL DEFAULT '0',
   `action` smallint(5) unsigned NOT NULL DEFAULT '0',
   `textid` mediumint(8) unsigned NOT NULL DEFAULT '0',
   KEY `zoneid` (`zoneid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `npc_option` */
+--
+-- Table structure for table `npc_option`
+--
 
 DROP TABLE IF EXISTS `npc_option`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `npc_option` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `gossip_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -1472,11 +1753,15 @@ CREATE TABLE `npc_option` (
   `box_text` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `npc_text` */
+--
+-- Table structure for table `npc_text`
+--
 
 DROP TABLE IF EXISTS `npc_text`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `npc_text` (
   `ID` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `text0_0` longtext,
@@ -1561,11 +1846,15 @@ CREATE TABLE `npc_text` (
   `em7_5` smallint(5) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `npc_trainer` */
+--
+-- Table structure for table `npc_trainer`
+--
 
 DROP TABLE IF EXISTS `npc_trainer`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `npc_trainer` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `spell` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -1575,11 +1864,15 @@ CREATE TABLE `npc_trainer` (
   `reqlevel` tinyint(3) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`,`spell`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `npc_vendor` */
+--
+-- Table structure for table `npc_vendor`
+--
 
 DROP TABLE IF EXISTS `npc_vendor`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `npc_vendor` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `item` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -1588,22 +1881,30 @@ CREATE TABLE `npc_vendor` (
   `ExtendedCost` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`,`item`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Npc System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `page_text` */
+--
+-- Table structure for table `page_text`
+--
 
 DROP TABLE IF EXISTS `page_text`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `page_text` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `text` longtext NOT NULL,
   `next_page` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Item System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `pet_levelstats` */
+--
+-- Table structure for table `pet_levelstats`
+--
 
 DROP TABLE IF EXISTS `pet_levelstats`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pet_levelstats` (
   `creature_entry` mediumint(8) unsigned NOT NULL,
   `level` tinyint(3) unsigned NOT NULL,
@@ -1617,11 +1918,15 @@ CREATE TABLE `pet_levelstats` (
   `spi` smallint(5) unsigned NOT NULL,
   PRIMARY KEY (`creature_entry`,`level`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 PACK_KEYS=0 COMMENT='Stores pet levels stats.';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `pet_name_generation` */
+--
+-- Table structure for table `pet_name_generation`
+--
 
 DROP TABLE IF EXISTS `pet_name_generation`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pet_name_generation` (
   `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
   `word` tinytext NOT NULL,
@@ -1629,11 +1934,15 @@ CREATE TABLE `pet_name_generation` (
   `half` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=261 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `petcreateinfo_spell` */
+--
+-- Table structure for table `petcreateinfo_spell`
+--
 
 DROP TABLE IF EXISTS `petcreateinfo_spell`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `petcreateinfo_spell` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `Spell1` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -1642,11 +1951,15 @@ CREATE TABLE `petcreateinfo_spell` (
   `Spell4` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Pet Create Spells';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `pickpocketing_loot_template` */
+--
+-- Table structure for table `pickpocketing_loot_template`
+--
 
 DROP TABLE IF EXISTS `pickpocketing_loot_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pickpocketing_loot_template` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `item` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -1659,11 +1972,15 @@ CREATE TABLE `pickpocketing_loot_template` (
   `condition_value2` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`,`item`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Loot System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `player_classlevelstats` */
+--
+-- Table structure for table `player_classlevelstats`
+--
 
 DROP TABLE IF EXISTS `player_classlevelstats`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `player_classlevelstats` (
   `class` tinyint(3) unsigned NOT NULL,
   `level` tinyint(3) unsigned NOT NULL,
@@ -1671,11 +1988,15 @@ CREATE TABLE `player_classlevelstats` (
   `basemana` smallint(5) unsigned NOT NULL,
   PRIMARY KEY (`class`,`level`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 PACK_KEYS=0 COMMENT='Stores levels stats.';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `player_levelstats` */
+--
+-- Table structure for table `player_levelstats`
+--
 
 DROP TABLE IF EXISTS `player_levelstats`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `player_levelstats` (
   `race` tinyint(3) unsigned NOT NULL,
   `class` tinyint(3) unsigned NOT NULL,
@@ -1687,11 +2008,15 @@ CREATE TABLE `player_levelstats` (
   `spi` tinyint(3) unsigned NOT NULL,
   PRIMARY KEY (`race`,`class`,`level`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 PACK_KEYS=0 COMMENT='Stores levels stats.';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `playercreateinfo` */
+--
+-- Table structure for table `playercreateinfo`
+--
 
 DROP TABLE IF EXISTS `playercreateinfo`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `playercreateinfo` (
   `race` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `class` tinyint(3) unsigned NOT NULL DEFAULT '0',
@@ -1702,11 +2027,15 @@ CREATE TABLE `playercreateinfo` (
   `position_z` float NOT NULL DEFAULT '0',
   PRIMARY KEY (`race`,`class`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `playercreateinfo_action` */
+--
+-- Table structure for table `playercreateinfo_action`
+--
 
 DROP TABLE IF EXISTS `playercreateinfo_action`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `playercreateinfo_action` (
   `race` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `class` tinyint(3) unsigned NOT NULL DEFAULT '0',
@@ -1717,11 +2046,15 @@ CREATE TABLE `playercreateinfo_action` (
   PRIMARY KEY (`race`,`class`,`button`),
   KEY `playercreateinfo_race_class_index` (`race`,`class`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `playercreateinfo_item` */
+--
+-- Table structure for table `playercreateinfo_item`
+--
 
 DROP TABLE IF EXISTS `playercreateinfo_item`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `playercreateinfo_item` (
   `race` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `class` tinyint(3) unsigned NOT NULL DEFAULT '0',
@@ -1729,11 +2062,15 @@ CREATE TABLE `playercreateinfo_item` (
   `amount` tinyint(3) unsigned NOT NULL DEFAULT '1',
   KEY `playercreateinfo_race_class_index` (`race`,`class`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `playercreateinfo_spell` */
+--
+-- Table structure for table `playercreateinfo_spell`
+--
 
 DROP TABLE IF EXISTS `playercreateinfo_spell`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `playercreateinfo_spell` (
   `race` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `class` tinyint(3) unsigned NOT NULL DEFAULT '0',
@@ -1742,11 +2079,15 @@ CREATE TABLE `playercreateinfo_spell` (
   `Active` tinyint(3) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`race`,`class`,`Spell`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `playercreateinfo_spell_custom` */
+--
+-- Table structure for table `playercreateinfo_spell_custom`
+--
 
 DROP TABLE IF EXISTS `playercreateinfo_spell_custom`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `playercreateinfo_spell_custom` (
   `race` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `class` tinyint(3) unsigned NOT NULL DEFAULT '0',
@@ -1755,11 +2096,15 @@ CREATE TABLE `playercreateinfo_spell_custom` (
   `Active` tinyint(3) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`race`,`class`,`Spell`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `pool_creature` */
+--
+-- Table structure for table `pool_creature`
+--
 
 DROP TABLE IF EXISTS `pool_creature`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pool_creature` (
   `guid` int(10) unsigned NOT NULL DEFAULT '0',
   `pool_entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -1767,11 +2112,15 @@ CREATE TABLE `pool_creature` (
   `description` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`pool_entry`,`guid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `pool_gameobject` */
+--
+-- Table structure for table `pool_gameobject`
+--
 
 DROP TABLE IF EXISTS `pool_gameobject`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pool_gameobject` (
   `guid` int(10) unsigned NOT NULL DEFAULT '0',
   `pool_entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -1779,11 +2128,15 @@ CREATE TABLE `pool_gameobject` (
   `description` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`guid`,`pool_entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `pool_pool` */
+--
+-- Table structure for table `pool_pool`
+--
 
 DROP TABLE IF EXISTS `pool_pool`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pool_pool` (
   `pool_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `mother_pool` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -1791,22 +2144,30 @@ CREATE TABLE `pool_pool` (
   `description` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`pool_id`,`mother_pool`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `pool_template` */
+--
+-- Table structure for table `pool_template`
+--
 
 DROP TABLE IF EXISTS `pool_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `pool_template` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Pool entry',
   `max_limit` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Max number of objects (0) is no limit',
   `description` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `prospecting_loot_template` */
+--
+-- Table structure for table `prospecting_loot_template`
+--
 
 DROP TABLE IF EXISTS `prospecting_loot_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prospecting_loot_template` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `item` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -1819,11 +2180,15 @@ CREATE TABLE `prospecting_loot_template` (
   `condition_value2` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`,`item`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Loot System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `quest_end_scripts` */
+--
+-- Table structure for table `quest_end_scripts`
+--
 
 DROP TABLE IF EXISTS `quest_end_scripts`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `quest_end_scripts` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `delay` int(10) unsigned NOT NULL DEFAULT '0',
@@ -1836,11 +2201,15 @@ CREATE TABLE `quest_end_scripts` (
   `z` float NOT NULL DEFAULT '0',
   `o` float NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `quest_mail_loot_template` */
+--
+-- Table structure for table `quest_mail_loot_template`
+--
 
 DROP TABLE IF EXISTS `quest_mail_loot_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `quest_mail_loot_template` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `item` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -1853,11 +2222,15 @@ CREATE TABLE `quest_mail_loot_template` (
   `condition_value2` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`,`item`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Loot System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `quest_start_scripts` */
+--
+-- Table structure for table `quest_start_scripts`
+--
 
 DROP TABLE IF EXISTS `quest_start_scripts`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `quest_start_scripts` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `delay` int(10) unsigned NOT NULL DEFAULT '0',
@@ -1870,11 +2243,15 @@ CREATE TABLE `quest_start_scripts` (
   `z` float NOT NULL DEFAULT '0',
   `o` float NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `quest_template` */
+--
+-- Table structure for table `quest_template`
+--
 
 DROP TABLE IF EXISTS `quest_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `quest_template` (
   `entry` int(11) NOT NULL DEFAULT '0',
   `Method` tinyint(3) unsigned NOT NULL DEFAULT '2',
@@ -2000,11 +2377,15 @@ CREATE TABLE `quest_template` (
   `CompleteScript` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Quest System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `reference_loot_template` */
+--
+-- Table structure for table `reference_loot_template`
+--
 
 DROP TABLE IF EXISTS `reference_loot_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `reference_loot_template` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `item` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -2017,11 +2398,15 @@ CREATE TABLE `reference_loot_template` (
   `condition_value2` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`,`item`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Loot System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `reputation_reward_rate` */
+--
+-- Table structure for table `reputation_reward_rate`
+--
 
 DROP TABLE IF EXISTS `reputation_reward_rate`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `reputation_reward_rate` (
   `faction` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `quest_rate` float NOT NULL DEFAULT '1',
@@ -2029,11 +2414,15 @@ CREATE TABLE `reputation_reward_rate` (
   `spell_rate` float NOT NULL DEFAULT '1',
   PRIMARY KEY (`faction`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `reputation_spillover_template` */
+--
+-- Table structure for table `reputation_spillover_template`
+--
 
 DROP TABLE IF EXISTS `reputation_spillover_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `reputation_spillover_template` (
   `faction` smallint(6) unsigned NOT NULL DEFAULT '0' COMMENT 'faction entry',
   `faction1` smallint(6) unsigned NOT NULL DEFAULT '0' COMMENT 'faction to give \nspillover for',
@@ -2050,11 +2439,15 @@ CREATE TABLE `reputation_spillover_template` (
   `rank_4` tinyint(3) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`faction`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Reputation spillover reputation gain';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `script_texts` */
+--
+-- Table structure for table `script_texts`
+--
 
 DROP TABLE IF EXISTS `script_texts`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `script_texts` (
   `entry` mediumint(8) NOT NULL,
   `content_default` text NOT NULL,
@@ -2073,11 +2466,15 @@ CREATE TABLE `script_texts` (
   `comment` text,
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Script Texts';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `script_waypoint` */
+--
+-- Table structure for table `script_waypoint`
+--
 
 DROP TABLE IF EXISTS `script_waypoint`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `script_waypoint` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'creature_template entry',
   `pointid` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -2088,42 +2485,58 @@ CREATE TABLE `script_waypoint` (
   `point_comment` text,
   PRIMARY KEY (`entry`,`pointid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Script Creature waypoints';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `scripted_event_id` */
+--
+-- Table structure for table `scripted_event_id`
+--
 
 DROP TABLE IF EXISTS `scripted_event_id`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `scripted_event_id` (
   `id` mediumint(8) NOT NULL,
   `ScriptName` char(64) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='Script library scripted events';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `scripted_spell_id` */
+--
+-- Table structure for table `scripted_spell_id`
+--
 
 DROP TABLE IF EXISTS `scripted_spell_id`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `scripted_spell_id` (
   `id` mediumint(8) NOT NULL,
   `ScriptName` char(64) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='Script library scripted spells';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `skill_discovery_template` */
+--
+-- Table structure for table `skill_discovery_template`
+--
 
 DROP TABLE IF EXISTS `skill_discovery_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `skill_discovery_template` (
   `spellId` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'SpellId of the discoverable spell',
   `reqSpell` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'spell requirement',
   `chance` float NOT NULL DEFAULT '0' COMMENT 'chance to discover',
   PRIMARY KEY (`spellId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Skill Discovery System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `skill_extra_item_template` */
+--
+-- Table structure for table `skill_extra_item_template`
+--
 
 DROP TABLE IF EXISTS `skill_extra_item_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `skill_extra_item_template` (
   `spellId` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'SpellId of the item creation spell',
   `requiredSpecialization` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Specialization spell id',
@@ -2131,21 +2544,29 @@ CREATE TABLE `skill_extra_item_template` (
   `additionalMaxNum` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'max num of adds',
   PRIMARY KEY (`spellId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Skill Specialization System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `skill_fishing_base_level` */
+--
+-- Table structure for table `skill_fishing_base_level`
+--
 
 DROP TABLE IF EXISTS `skill_fishing_base_level`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `skill_fishing_base_level` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Area identifier',
   `skill` smallint(6) NOT NULL DEFAULT '0' COMMENT 'Base skill level requirement',
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Fishing system';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `skinning_loot_template` */
+--
+-- Table structure for table `skinning_loot_template`
+--
 
 DROP TABLE IF EXISTS `skinning_loot_template`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `skinning_loot_template` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `item` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -2158,32 +2579,44 @@ CREATE TABLE `skinning_loot_template` (
   `condition_value2` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`,`item`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Loot System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `spell_affect` */
+--
+-- Table structure for table `spell_affect`
+--
 
 DROP TABLE IF EXISTS `spell_affect`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `spell_affect` (
   `entry` smallint(5) unsigned NOT NULL DEFAULT '0',
   `effectId` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `SpellFamilyMask` bigint(20) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`,`effectId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `spell_elixir` */
+--
+-- Table structure for table `spell_elixir`
+--
 
 DROP TABLE IF EXISTS `spell_elixir`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `spell_elixir` (
   `entry` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'SpellId of potion',
   `mask` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT 'Mask 0x1 battle 0x2 guardian 0x3 flask 0x7 unstable flasks 0xB shattrath flasks',
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Spell System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `spell_enchant_proc_data` */
+--
+-- Table structure for table `spell_enchant_proc_data`
+--
 
 DROP TABLE IF EXISTS `spell_enchant_proc_data`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `spell_enchant_proc_data` (
   `entry` int(10) unsigned NOT NULL,
   `customChance` int(10) unsigned NOT NULL DEFAULT '0',
@@ -2192,21 +2625,29 @@ CREATE TABLE `spell_enchant_proc_data` (
   `procEx` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Spell enchant proc data';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `spell_learn_spell` */
+--
+-- Table structure for table `spell_learn_spell`
+--
 
 DROP TABLE IF EXISTS `spell_learn_spell`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `spell_learn_spell` (
   `entry` smallint(5) unsigned NOT NULL DEFAULT '0',
   `SpellID` smallint(5) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`,`SpellID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Item System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `spell_linked_spell` */
+--
+-- Table structure for table `spell_linked_spell`
+--
 
 DROP TABLE IF EXISTS `spell_linked_spell`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `spell_linked_spell` (
   `spell_trigger` int(10) NOT NULL,
   `spell_effect` int(10) NOT NULL DEFAULT '0',
@@ -2214,22 +2655,30 @@ CREATE TABLE `spell_linked_spell` (
   `comment` text NOT NULL,
   PRIMARY KEY (`spell_trigger`,`spell_effect`,`type`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `spell_pet_auras` */
+--
+-- Table structure for table `spell_pet_auras`
+--
 
 DROP TABLE IF EXISTS `spell_pet_auras`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `spell_pet_auras` (
   `spell` mediumint(8) unsigned NOT NULL COMMENT 'dummy spell id',
   `pet` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'pet id; 0 = all',
   `aura` mediumint(8) unsigned NOT NULL COMMENT 'pet aura id',
   PRIMARY KEY (`spell`,`pet`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `spell_proc_event` */
+--
+-- Table structure for table `spell_proc_event`
+--
 
 DROP TABLE IF EXISTS `spell_proc_event`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `spell_proc_event` (
   `entry` smallint(6) unsigned NOT NULL DEFAULT '0',
   `SchoolMask` tinyint(4) NOT NULL DEFAULT '0',
@@ -2242,32 +2691,44 @@ CREATE TABLE `spell_proc_event` (
   `Cooldown` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `spell_required` */
+--
+-- Table structure for table `spell_required`
+--
 
 DROP TABLE IF EXISTS `spell_required`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `spell_required` (
   `spell_id` mediumint(9) NOT NULL DEFAULT '0',
   `req_spell` mediumint(9) NOT NULL DEFAULT '0',
   PRIMARY KEY (`spell_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Spell Additinal Data';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `spell_script_target` */
+--
+-- Table structure for table `spell_script_target`
+--
 
 DROP TABLE IF EXISTS `spell_script_target`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `spell_script_target` (
   `entry` mediumint(8) unsigned NOT NULL,
   `type` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `targetEntry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   UNIQUE KEY `entry_type_target` (`entry`,`type`,`targetEntry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='Spell System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `spell_scripts` */
+--
+-- Table structure for table `spell_scripts`
+--
 
 DROP TABLE IF EXISTS `spell_scripts`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `spell_scripts` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `delay` int(10) unsigned NOT NULL DEFAULT '0',
@@ -2280,11 +2741,15 @@ CREATE TABLE `spell_scripts` (
   `z` float NOT NULL DEFAULT '0',
   `o` float NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `spell_target_position` */
+--
+-- Table structure for table `spell_target_position`
+--
 
 DROP TABLE IF EXISTS `spell_target_position`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `spell_target_position` (
   `id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Identifier',
   `target_map` smallint(5) unsigned NOT NULL DEFAULT '0',
@@ -2294,53 +2759,73 @@ CREATE TABLE `spell_target_position` (
   `target_orientation` float NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Spell System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `spell_threat` */
+--
+-- Table structure for table `spell_threat`
+--
 
 DROP TABLE IF EXISTS `spell_threat`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `spell_threat` (
   `entry` mediumint(8) unsigned NOT NULL,
   `Threat` smallint(6) NOT NULL,
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `transport_events` */
+--
+-- Table structure for table `transport_events`
+--
 
 DROP TABLE IF EXISTS `transport_events`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `transport_events` (
   `entry` int(11) unsigned NOT NULL DEFAULT '0',
   `waypoint_id` int(11) unsigned NOT NULL DEFAULT '0',
   `event_id` int(11) unsigned NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `transports` */
+--
+-- Table structure for table `transports`
+--
 
 DROP TABLE IF EXISTS `transports`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `transports` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
   `name` text,
   `period` mediumint(8) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`entry`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Transports';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `version` */
+--
+-- Table structure for table `version`
+--
 
 DROP TABLE IF EXISTS `version`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `version` (
   `core_version` varchar(120) DEFAULT NULL COMMENT 'Core revision dumped at startup.',
   `core_revision` bigint(20) unsigned DEFAULT NULL,
   `db_version` varchar(120) DEFAULT NULL COMMENT 'Version of world DB.',
   `script_version` varchar(120) DEFAULT NULL COMMENT 'Version of scripts DB.'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=FIXED COMMENT='Version Notes';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `warden_data_result` */
+--
+-- Table structure for table `warden_data_result`
+--
 
 DROP TABLE IF EXISTS `warden_data_result`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `warden_data_result` (
   `id` int(4) NOT NULL AUTO_INCREMENT,
   `check` int(3) DEFAULT NULL,
@@ -2352,11 +2837,15 @@ CREATE TABLE `warden_data_result` (
   `comment` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1011 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `waypoint_data` */
+--
+-- Table structure for table `waypoint_data`
+--
 
 DROP TABLE IF EXISTS `waypoint_data`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `waypoint_data` (
   `id` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Creature GUID',
   `point` mediumint(8) unsigned NOT NULL DEFAULT '0',
@@ -2370,11 +2859,15 @@ CREATE TABLE `waypoint_data` (
   `wpguid` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`,`point`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `waypoint_scripts` */
+--
+-- Table structure for table `waypoint_scripts`
+--
 
 DROP TABLE IF EXISTS `waypoint_scripts`;
-
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `waypoint_scripts` (
   `id` int(11) unsigned NOT NULL DEFAULT '0',
   `delay` int(11) unsigned NOT NULL DEFAULT '0',
@@ -2389,8 +2882,19 @@ CREATE TABLE `waypoint_scripts` (
   `guid` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`guid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping routines for database 'hg_world2'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2013-01-03  2:02:10
