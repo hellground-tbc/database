@@ -1,0 +1,14 @@
+UPDATE `quest_template` SET `PrevQuestId`  = '10557' WHERE entry = '10710';
+UPDATE `creature_template` SET `ScriptName` = 'npc_rally_zapnabber' WHERE `entry` = '21461';
+UPDATE `creature_template` SET `MovementType` = '0' WHERE `entry` = '21393';
+UPDATE `creature` SET `MovementType` = '0' WHERE `guid` = '74872';
+UPDATE `creature` SET `position_x` = '1924.531' WHERE `guid` = '74872';
+UPDATE `creature` SET `position_y` = '5574.841' WHERE `guid` = '74872';
+UPDATE `creature` SET `position_z` = '274.753' WHERE `guid` = '74872';
+UPDATE `creature` SET `MovementType` = '0' WHERE `guid` = '74435';
+UPDATE `creature` SET `id` = '21394' WHERE `guid` = '74435';
+UPDATE `creature` SET `position_x` = '1920.163' WHERE `guid` = '74435';
+UPDATE `creature` SET `position_y` = '5581.826' WHERE `guid` = '74435';
+UPDATE `creature` SET `position_z` = '269.222' WHERE `guid` = '74435';
+DELETE FROM `spell_script_target` WHERE `entry`= 36795;
+INSERT INTO `spell_script_target` VALUES (36795, 1, 21394);
