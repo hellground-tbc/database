@@ -1,6 +1,6 @@
 -- update imp trigger and change its localisation, remove not needed emote
 update creature_template set modelid_A = 17188, modelid_H = 17188, minlevel = 70, maxlevel = 70, scale = 0.6, ScriptName = "npc_gauntlet_imp_trigger" where entry = 25848;
-update creature set positon_x = 1697.95, position_y = 501.711, position_z = 86.4437 where guid = 63716;
+update creature set position_x = 1697.95, position_y = 501.711, position_z = 86.4437 where guid = 63716;
 delete from script_texts where entry = -1811007;
 
 -- modify gauntlet path
