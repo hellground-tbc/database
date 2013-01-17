@@ -1,0 +1,26 @@
+UPDATE `creature` SET `MovementType` = '0' WHERE `guid` = '70668';
+UPDATE `creature` SET `position_x` = '2272.956' WHERE `guid` = '70668';
+UPDATE `creature` SET `position_y` = '5390.944' WHERE `guid` = '70668';
+UPDATE `creature` SET `position_z` = '144.835' WHERE `guid` = '70668';
+UPDATE `creature` SET `orientation` = '5.25649' WHERE `guid` = '70668';
+UPDATE `creature_template` SET `minhealth` = '34040' WHERE entry = '19747';
+UPDATE `creature_template` SET `maxhealth` = '34040' WHERE entry = '19747';
+UPDATE `creature_template` SET `faction_A` = '1710' WHERE `entry` = '22478';
+UPDATE `creature_template` SET `faction_H` = '1710' WHERE `entry` = '22478';
+UPDATE `creature_template` SET `attackpower` = '1779' WHERE `entry` = '22478';
+DELETE FROM `spell_script_target` WHERE `entry` = 39218;
+INSERT INTO `spell_script_target` VALUES
+(39218,1,20736);
+UPDATE `creature_template` SET `AIName` = 'EventAI' WHERE entry = '19747';
+DELETE FROM `creature_ai_scripts` WHERE `id` IN (1974701,1974702,1974703, 1974704, 1974705);
+INSERT INTO `creature_ai_scripts` VALUES ('1974701','19747','11','0','100','0','0','0','0','0','11','39218','0','1','0','0','0','0','0','0','0','0','Baelmon the Hound-Master - Baelmon Channeling on Spawn');
+INSERT INTO `creature_ai_scripts` VALUES ('1974702','19747','21','0','100','0','0','0','0','0','11','39218','0','1','0','0','0','0','0','0','0','0','Baelmon the Hound-Master - Baelmon Channeling on Spawn on Reach Home');
+INSERT INTO `creature_ai_scripts` VALUES ('1974703','19747','2','0','100','0','30','0','0','0','11','39272','1','1','0','0','0','0','0','0','0','0','Baelmon the Hound-Master - Summon Wrath Hound at 30% HP');
+INSERT INTO `creature_ai_scripts` VALUES ('1974704','19747','9','0','100','1','0','0','20000','23000','11','11443','1','0','0','0','0','0','0','0','0','0','Baelmon the Hound-Master - Cast Cripple');
+INSERT INTO `creature_ai_scripts` VALUES ('1974705','19747','9','0','100','1','0','0','25000','28000','11','31598','1','0','0','0','0','0','0','0','0','0','Baelmon the Hound-Master - Cast Rain of Fire');
+UPDATE `creature_template` SET `AIName` = 'EventAI' WHERE entry = '22499';
+DELETE FROM `creature_ai_scripts` WHERE `id` = 2249901;
+INSERT INTO `creature_ai_scripts` VALUES ('2249901','22499','0','0','100','1','8000','8000','12000','12000','11','36406','1','0','0','0','0','0','0','0','0','0','Lesser Wrath Hound - Double Breath');
+UPDATE `creature_template` SET `AIName` = 'EventAI' WHERE entry = '22478';
+DELETE FROM `creature_ai_scripts` WHERE `id` = 2247801;
+INSERT INTO `creature_ai_scripts` VALUES ('2247801','22478','0','0','100','1','8000','8000','12000','12000','11','39274','1','0','0','0','0','0','0','0','0','0','Evergrove Ancient - Trample');
