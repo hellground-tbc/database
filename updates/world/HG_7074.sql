@@ -1,7 +1,7 @@
 DELETE FROM `event_scripts` WHERE `id` = '14536';
 INSERT INTO `event_scripts` VALUES (14536, 4, 10, 21514, 3000000, 0, 3650.40, 7166.05, 142.14, 2.24);
 DELETE FROM `event_scripts` WHERE `id` IN ('14400');
-INSERT INTO `event_scripts` VALUES (14400, 0, 10, 10204, 3000000, 0, 3605.5, 7186.44, 141.12, 5.36);
+INSERT INTO `event_scripts` VALUES (14400, 0, 10, 10204, 60000, 0, 3605.5, 7186.44, 141.12, 5.36);
 INSERT INTO `event_scripts` VALUES (14400, 2, 10, 21514, 3000000, 0, 3650.40, 7166.05, 142.14, 2.24);
 UPDATE `creature_template` SET `faction_H` = '35' WHERE entry = '10204';
 UPDATE `creature_template` SET `ScriptName` = 'npc_gargrom' WHERE `entry` = '21514';
