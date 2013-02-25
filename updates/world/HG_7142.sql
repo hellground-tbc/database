@@ -1,4 +1,5 @@
 USE `world`;
+-- #169 kopiuje frakcje od entry=900
 UPDATE `creature_template` SET `faction_A`='11',`faction_H`='11' WHERE `entry`='3096';
 -- # 227 kopiuje frakcje od entry=17936
 UPDATE `creature_template` SET `faction_A`='1719',`faction_H`='1719' WHERE `entry`='18036';
@@ -19,9 +20,13 @@ UPDATE `creature_template` SET `type`='1' WHERE `entry`='23979';
 
 -- #136 analogicznie do alterac ram, dla którego symetrycznie frakcja 1274 z tą samą nazwą
 UPDATE `creature_template` SET `faction_A`='1275',`faction_H`='1275' WHERE `entry`='10981' OR `entry`='22737';
--- #44 połowa
-UPDATE `creature` SET `position_x`='-906', `position_y`='7087', `position_z`='171.7' WHERE `guid`='99969';
 -- #290
 Update `script_texts` set `content_default`='That was fun, but I still await a true challenge!' where `entry`='-1580020';
 -- gogrom the dragoncaller (quest item nie jest quest itemem)
 update `creature_loot_template` set `ChanceOrQuestChance`='100',`lootcondition`='9',`condition_value1`='10723' where `item`='31754';
+-- #298 dafuq?? quest wymaga samego siebie do rozpoczecia
+update `quest_template` set `PrevQuestId`='0' where `entry`='9813';
+-- #295 +5 inne questy; image of commander ameer - to sa dwa rozne npc maja byc w dwoch roznych miejscach i byc przydzielone do roznych questow
+update `creature_template` set `minlevel`='70',`maxlevel`='70',`minhealth`='7000',`maxhealth`='7000',`armor`='20',`faction_A`='1795',`faction_H`='1795',`npcflag`='2',`unit_flags`='4',`equipment_id`='1600' where `entry`='22919';
+UPDATE `creature_questrelation` set `id`='22919' where`quest`='10975'or `quest`='10976'or `quest`='10977'or `quest`='10981'or `quest`='10982';
+UPDATE `creature_involvedrelation` set `id`='22919' where`quest`='10975'or `quest`='10976'or `quest`='10977'or `quest`='10981'or `quest`='10982' or `quest`='10974';
