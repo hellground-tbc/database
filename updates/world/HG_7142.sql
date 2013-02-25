@@ -9,7 +9,7 @@ UPDATE `quest_template` SET `PrevQuestId`='0' WHERE (`entry`='10902' OR `entry`=
 -- #238 usuwam następniki z pre-questów które powinny być nieobowiązkowe
 UPDATE `quest_template` SET `NextQuestId`='0' WHERE (`entry`='5066' OR `entry`='5090' OR `entry`='5091' OR `entry`='5093' OR `entry`='5094' OR `entry`='5095' OR `entry`='10373' OR `entry`='10374');
 -- #293 wywalam item z wymagań na wejście do scholomance
-UPDATE `acces_requirement` SET `item`='0' WHERE `id`='289';
+UPDATE `access_requirement` SET `item`='0' WHERE `id`='289';
 -- i jeszcze jedno, odkryte przypadkiem, npce mają niewiadomo skąd buffa spirit bond (i to pojedyncze sztuki)
 UPDATE `creature_addon` SET `auras`=NULL WHERE `guid`='518'OR `guid`='69011' OR `guid`='72942' OR `guid`='73192' OR`guid`='77583' OR`guid`='77668';
 
@@ -20,4 +20,8 @@ UPDATE `creature_template` SET `type`='1' WHERE `entry`='23979';
 -- #136 analogicznie do alterac ram, dla którego symetrycznie frakcja 1274 z tą samą nazwą
 UPDATE `creature_template` SET `faction_A`='1275',`faction_H`='1275' WHERE `entry`='10981' OR `entry`='22737';
 -- #44 połowa
-UPDATE `creature` SET `position_x`='-906', `position_y`='7087', `position_z`='171,7' WHERE `guid`='99969';
+UPDATE `creature` SET `position_x`='-906', `position_y`='7087', `position_z`='171.7' WHERE `guid`='99969';
+-- #290
+Update `script_texts` set `content_default`='That was fun, but I still await a true challenge!' where `entry`='-1580020';
+-- gogrom the dragoncaller (quest item nie jest quest itemem)
+update `creature_loot_template` set `ChanceOrQuestChance`='100',`lootcondition`='9',`condition_value1`='10723' where `item`='31754';
