@@ -30,3 +30,16 @@ update `quest_template` set `PrevQuestId`='0' where `entry`='9813';
 update `creature_template` set `minlevel`='70',`maxlevel`='70',`minhealth`='7000',`maxhealth`='7000',`armor`='20',`faction_A`='1795',`faction_H`='1795',`npcflag`='2',`unit_flags`='4',`equipment_id`='1600' where `entry`='22919';
 UPDATE `creature_questrelation` set `id`='22919' where`quest`='10975'or `quest`='10976'or `quest`='10977'or `quest`='10981'or `quest`='10982';
 UPDATE `creature_involvedrelation` set `id`='22919' where`quest`='10975'or `quest`='10976'or `quest`='10977'or `quest`='10981'or `quest`='10982' or `quest`='10974';
+-- dwa npce stoja dokladnie na sobie, jeden jest niepotrzebny a drugi ma grzecznie sie nie ruszac
+delete from `creature` where `guid`='72679';
+update `creature_template` set `unit_flags`='33555204' where `entry`='20564';
+-- #162 shadow sight causes remove prowl/stealth/invisibility 
+insert into `spell_linked_spell` values
+(34709, -5215, 1, ''),
+(34709, -6783, 1, ''),
+(34709, -9913, 1, ''),
+(34709, -1784, 1, ''),
+(34709, -1785, 1, ''),
+(34709, -1786, 1, ''),
+(34709, -1787, 1, ''),
+(34709, -32612, 1, '');
