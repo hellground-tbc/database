@@ -43,3 +43,5 @@ insert into `spell_linked_spell` values
 (34709, -1786, 1, ''),
 (34709, -1787, 1, ''),
 (34709, -32612, 1, '');
+-- #246 quest item is not quest item
+update `creature_loot_template` set `ChanceOrQuestChance`='33' where `item`='7131';
