@@ -1,6 +1,6 @@
 USE `world`;
--- #169 kopiuje frakcje od entry=900
-UPDATE `creature_template` SET `faction_A`='11',`faction_H`='11' WHERE `entry`='3096';
+-- quartermasterzy sprzedaja itemy po 1 w cenie 5
+update `item_template` set `BuyCount`='5' where `entry` in (32721,32722,24009);
 -- # 227 kopiuje frakcje od entry=17936
 UPDATE `creature_template` SET `faction_A`='1719',`faction_H`='1719' WHERE `entry`='18036';
 -- #234 repeatable
