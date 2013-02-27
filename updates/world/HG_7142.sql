@@ -44,4 +44,7 @@ insert into `spell_linked_spell` values
 (34709, -1787, 1, ''),
 (34709, -32612, 1, '');
 -- #246 quest item is not quest item
-update `creature_loot_template` set `ChanceOrQuestChance`='33' where `item`='7131';
+update `creature_loot_template` set `ChanceOrQuestChance`='33',`lootcondition`='9',`condition_value`='1846' where `item`='7131';
+-- #85 quest item not quest item
+update `creature_loot_template` set `ChanceOrQuestChance`='15',`lootcondition`='9',`condition_value`='10688' where `item`='30811' and `entry`='21503';
+update `creature_loot_template` set `ChanceOrQuestChance`='5',`lootcondition`='9',`condition_value`='10688' where `item`='30811' and `entry`='21505';
