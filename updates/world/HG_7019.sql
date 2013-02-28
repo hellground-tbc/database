@@ -1,0 +1,24 @@
+DELETE FROM `spell_script_target` WHERE `entry` = 39221;
+INSERT INTO `spell_script_target` VALUES
+(39221,1,22495);
+UPDATE `creature_template` SET `ScriptName` = 'npc_cannon_target' WHERE `entry` = '22495';
+UPDATE `creature_template` SET `unit_flags` = '132' WHERE `entry` = '22443';
+UPDATE `creature_template` SET `unit_flags` = '0' WHERE `entry` = '22500';
+UPDATE `creature_template` SET `unit_flags` = '0' WHERE `entry` = '22474';
+UPDATE `creature_template` SET `flags_extra` = '0' WHERE `entry` = '22500';
+UPDATE `creature_template` SET `flags_extra` = '0' WHERE `entry` = '22474';
+UPDATE `creature` SET `position_x` = '2196.677' WHERE `guid` = '78947';
+UPDATE `creature` SET `position_y` = '5477.322' WHERE `guid` = '78947';
+UPDATE `creature` SET `position_z` = '156.849' WHERE `guid` = '78947';
+UPDATE `creature` SET `position_x` = '1968.686' WHERE `guid` = '78948';
+UPDATE `creature` SET `position_y` = '5314.647' WHERE `guid` = '78948';
+UPDATE `creature` SET `position_z` = '158.894' WHERE `guid` = '78948';
+UPDATE `creature` SET `orientation` = '5.92231' WHERE `guid` = '78794';
+UPDATE `creature` SET `orientation` = '3.22896' WHERE `guid` = '78793';
+DELETE FROM `creature` WHERE `id` IN (22500, 22474);
+UPDATE `creature_template` SET `minhealth` = '8170' WHERE entry = '22443';
+UPDATE `creature_template` SET `maxhealth` = '8170' WHERE entry = '22443';
+UPDATE `creature_template` SET `minhealth` = '477' WHERE entry = '22474';
+UPDATE `creature_template` SET `maxhealth` = '477' WHERE entry = '22474';
+UPDATE `creature_template` SET `minhealth` = '3360' WHERE entry = '22500';
+UPDATE `creature_template` SET `maxhealth` = '3360' WHERE entry = '22500';
