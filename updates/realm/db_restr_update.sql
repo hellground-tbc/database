@@ -53,15 +53,15 @@ CREATE  TABLE IF NOT EXISTS `account` (
   `client_os_version_id` TINYINT UNSIGNED NOT NULL DEFAULT 0,
   PRIMARY KEY (`account_id`) ,
   UNIQUE INDEX `username` (`username` ASC),
-  CONSTRAINT `account_state_id` FOREIGN KEY `account_state_id` (`account_state_id`)
+  CONSTRAINT `FK_account_state_id` FOREIGN KEY `account_state_id` (`account_state_id`)
     REFERENCES `account_state` (`account_state_id`)
     ON DELETE NO ACTION
     ON UPDATE CASCADE,
-  CONSTRAINT `client_os_version_id` FOREIGN KEY `client_os_version_id` (`client_os_version_id`)
+  CONSTRAINT `FK_client_os_version_id` FOREIGN KEY `client_os_version_id` (`client_os_version_id`)
     REFERENCES `client_os_version` (`client_os_version_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `expansion_id` FOREIGN KEY `expansion_id` (`expansion_id`)
+  CONSTRAINT `FK_expansion_id` FOREIGN KEY `expansion_id` (`expansion_id`)
     REFERENCES `expansion` (`expansion_id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION
@@ -263,6 +263,17 @@ INSERT INTO `expansion` VALUES
 INSERT INTO `punishment_type` VALUES
 (1, 'Account mute'),
 (2, 'Account ban');
+
+INSERT INTO `locale` VALUES
+(0, 'enUS'),
+(1, 'koKR'),
+(2, 'frFR'),
+(3, 'deDE'),
+(4, 'zhCN'),
+(5, 'zhTW'),
+(6, 'esES'),
+(7, 'esMX'),
+(8, 'ruRU');
 
 -- Copy old patterns to new table
 INSERT INTO pattern_banned (`ip_pattern`, `local_ip_pattern`, `comment`)
