@@ -1,0 +1,70 @@
+
+DROP TABLE IF EXISTS `account_access`;
+CREATE TABLE `account_access` (
+  `id` int(11) unsigned NOT NULL,
+  `gmlevel` tinyint(3) unsigned NOT NULL,
+  `RealmID` int(11) NOT NULL DEFAULT '-1',
+  `comment` text,
+  PRIMARY KEY (`id`,`RealmID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+
+INSERT INTO account_access SELECT id, gmlevel, -1, NULL FROM account WHERE gmlevel > 0;
+
+ALTER TABLE `account`
+DROP COLUMN `gmlevel`,
+DROP COLUMN `mutetime`,
+MODIFY COLUMN `id`  int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'Identifier' FIRST ,
+DROP INDEX `gmlevel`,
+DROP INDEX `username` ,
+ADD UNIQUE INDEX `idx_username` (`username`) USING BTREE ,
+ENGINE=MyISAM,
+COMMENT='Account System',
+ROW_FORMAT=DYNAMIC;
+
+ALTER TABLE `account_banned`
+MODIFY COLUMN `id`  int(11) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Account Id' FIRST ,
+ENGINE=MyISAM,
+COMMENT='Ban List',
+ROW_FORMAT=DYNAMIC;
+
+ALTER TABLE `account_login`
+MODIFY COLUMN `id`  int(11) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Account Id' FIRST ,
+ENGINE=MyISAM,
+ROW_FORMAT=DYNAMIC;
+
+ALTER TABLE `account_mute`
+MODIFY COLUMN `id`  int(11) UNSIGNED NOT NULL DEFAULT 0 COMMENT 'Account Id' FIRST ,
+ENGINE=MyISAM,
+COMMENT='Mute List',
+ROW_FORMAT=DYNAMIC;
+
+ALTER TABLE `email_banned`
+ENGINE=MyISAM,
+ROW_FORMAT=DYNAMIC;
+
+ALTER TABLE `ip_banned`
+MODIFY COLUMN `bandate`  bigint(40) NOT NULL AFTER `ip`,
+MODIFY COLUMN `unbandate`  bigint(40) NOT NULL AFTER `bandate`,
+ENGINE=MyISAM,
+COMMENT='Banned IPs',
+ROW_FORMAT=DYNAMIC;
+
+ALTER TABLE `pattern_banned`
+ENGINE=MyISAM,
+ROW_FORMAT=DYNAMIC;
+
+ALTER TABLE `realmcharacters`
+ENGINE=MyISAM,
+COMMENT='Realm Character Tracker',
+ROW_FORMAT=DYNAMIC;
+
+ALTER TABLE `realmlist`
+ENGINE=MyISAM,
+COMMENT='Realm System',
+ROW_FORMAT=DYNAMIC;
+
+ALTER TABLE `unqueue_account`
+MODIFY COLUMN `accid`  int(11) UNSIGNED NOT NULL FIRST ,
+ENGINE=MyISAM,
+ROW_FORMAT=DYNAMIC;
+
