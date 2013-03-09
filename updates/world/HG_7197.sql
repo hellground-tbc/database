@@ -1,2 +1,2 @@
--- Alythes & Sacrolash are immune to spell haste reduction
-UPDATE creature_template SET flags_extra = 4194305 WHERE entry IN (25165, 25166);
+-- Alythes & Sacrolash are immune to spell haste reduction and taunt
+UPDATE creature_template SET flags_extra = 4259841 WHERE entry IN (25165, 25166);
