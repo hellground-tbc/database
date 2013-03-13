@@ -10,4 +10,4 @@ delete from `character_inventory` where `item_template`='17902' and `guid` in (s
 delete from `character_inventory` where `item_template`='17903' and `guid` in (select `guid` from `character_reputation` where (`faction`='730' and `standing`<'42000'));
 delete from `character_inventory` where `item_template`='17904' and `guid` in (select `guid` from `character_reputation` where (`faction`='730' and `standing`<'42999'));
 -- clearing invalid items
-delete from `item_instance` where (not exists (select `item` from `character_inventory` where `item`=`item_instance`.`guid`)) and (not exists (select `item_guid` from `mail_item` where `item_guid`=`item_instance`.`guid`)) and (not exists (select `item_guid` from `guild_bank_item` where `item_guid`=`item_instance`.`guid`))
+delete from `item_instance` where (not exists (select `item` from `character_inventory` where `item`=`item_instance`.`guid`)) and (not exists (select `item_guid` from `mail_items` where `item_guid`=`item_instance`.`guid`)) and (not exists (select `item_guid` from `guild_bank_item` where `item_guid`=`item_instance`.`guid`))
