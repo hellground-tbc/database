@@ -1,0 +1,11 @@
+INSERT INTO `creature_ai_summons` VALUES ('22', '3423.28', '-3055.59', '136.498', '0', '300000', '16102');
+INSERT INTO `creature_ai_summons` VALUES ('23', '3420.28', '-3053.59', '136.498', '0', '300000', '16101');
+
+INSERT INTO `creature_ai_scripts` VALUES ('1604401', '16044', '8', '0', '100', '2', '27184', '-1', '0', '0', '12', '16080', '1', '60000', '41', '0', '0', '0', '0', '0', '0', '0', 'Mor Grayhoof Trigger - Spawn Mor Grayhoof and Despawn Trigger');
+INSERT INTO `creature_ai_scripts` VALUES ('1604402', '16044', '8', '0', '100', '2', '27203', '-1', '0', '0', '12', '16080', '1', '60000', '41', '0', '0', '0', '0', '0', '0', '0', 'Mor Grayhoof Trigger - Spawn Mor Grayhoof and Despawn Trigger');
+INSERT INTO `creature_ai_scripts` VALUES ('1604501', '16045', '8', '0', '100', '2', '27190', '-1', '0', '0', '12', '16097', '1', '60000', '41', '0', '0', '0', '0', '0', '0', '0', 'Isalien Trigger - Spawn Isalien and Despawn Trigger');
+INSERT INTO `creature_ai_scripts` VALUES ('1604502', '16045', '8', '0', '100', '2', '27203', '-1', '0', '0', '12', '16097', '1', '60000', '41', '0', '0', '0', '0', '0', '0', '0', 'Isalien Trigger - Spawn Isalien and Despawn Trigger');
+INSERT INTO `creature_ai_scripts` VALUES ('1604601', '16046', '8', '0', '100', '2', '27191', '27191', '-1', '0', '32', '16102', '1', '22', '32', '16101', '1', '23', '41', '0', '0', '0', 'Jarien and Sothos Trigger - Spawn Jarien and Sothos and Despawn Trigger');
+INSERT INTO `creature_ai_scripts` VALUES ('1604602', '16046', '8', '0', '100', '2', '27203', '27203', '-1', '0', '32', '16102', '1', '22', '32', '16101', '1', '23', '41', '0', '0', '0', 'Jarien and Sothos Trigger - Spawn Jarien and Sothos and Despawn Trigger');
+INSERT INTO `creature_ai_scripts` VALUES ('1604701', '16047', '8', '0', '100', '2', '27201', '-1', '0', '0', '12', '16118', '1', '60000', '41', '0', '0', '0', '0', '0', '0', '0', 'Kormok Trigger - Spawn Kormok and Despawn Trigger');
+INSERT INTO `creature_ai_scripts` VALUES ('1604702', '16047', '8', '0', '100', '2', '27203', '-1', '0', '0', '12', '16118', '1', '60000', '41', '0', '0', '0', '0', '0', '0', '0', 'Kormok Trigger - Spawn Kormok and Despawn Trigger');
