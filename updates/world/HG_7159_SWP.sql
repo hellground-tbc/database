@@ -6,7 +6,6 @@ update creature_template set equipment_id = 3000 where entry = 25165;
 UPDATE creature_template SET mechanic_immune_mask = 536894801 WHERE entry = 25507;
 -- trash spawntime
 update creature set spawntimesecs = 10800 where id in (25848, 25373, 25486, 25483, 25506, 25484, 25837);
-use world;
 -- vanquisher
 UPDATE creature_template SET mechanic_immune_mask = 2052 where entry = 25486;
 -- lifeshaper
