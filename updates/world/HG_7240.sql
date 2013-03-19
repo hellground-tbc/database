@@ -1,0 +1,12 @@
+INSERT INTO `warden_data_result` VALUES ('1010', '243', '', '', '4912599', '2', '7509 ', 'Antiafk');
+INSERT INTO `warden_data_result` VALUES ('1011', '243', '', '', '6638471', '2', '741E ', 'Model Haxx');
+INSERT INTO `warden_data_result` VALUES ('1012', '243', '', '', '5524941', '2', '7F17 ', 'Show Levels');
+INSERT INTO `warden_data_result` VALUES ('1013', '243', '', '', '6160566', '6', '8B80E0100000', 'Tracking');
+INSERT INTO `warden_data_result` VALUES ('1014', '243', '', '', '6181252', '6', '8BB1E4100000 ', 'World Tracking');
+INSERT INTO `warden_data_result` VALUES ('1015', '217', '', 'WPESPY.DLL', '0', '0', '', 'WPE PRO - injected dll');
+INSERT INTO `warden_data_result` VALUES ('1016', '217', '', 'RPE.DLL', '0', '0', '', 'rEdoX Packet Editor - injected dll');
+INSERT INTO `warden_data_result` VALUES ('1017', '217', '', 'ICANHAZSPEED.DLL', '0', '0', '', 'ICanHazSpeed - injected dll');
+INSERT INTO `warden_data_result` VALUES ('1018', '217', '', 'MAELSTROM_KEYS_HOOK.DLL', '0', '0', '', 'Maelstrom - injected dll');
+INSERT INTO `warden_data_result` VALUES ('1019', '217', '', 'MAELSTROM_MESS_HOOK.DLL', '0', '0', '', 'Maelstrom - injected dll');
+INSERT INTO `warden_data_result` VALUES ('1020', '217', null, 'SETPRIV.DLL', '0', '0', null, 'HideToolz - injected dll');
+INSERT INTO `warden_data_result` VALUES ('1021', '217', null, 'SPEEDHACK.DLL', '0', '0', null, 'Cheat Engine - injected dll');
