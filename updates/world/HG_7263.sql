@@ -1,0 +1,1 @@
+UPDATE `quest_template` SET `RewItemId1` = 21176, `RewItemCount1` = 1 WHERE `entry` = 8745;
