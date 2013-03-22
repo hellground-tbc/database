@@ -1,1 +1,2 @@
 INSERT INTO game_event_npc_gossip VALUES (93947, 50, 12400), (93947, 51, 12401), (93947, 52, 12402);
+INSERT INTO reference_loot_template VALUES (34091, 35213, 0, 1, 1, 1, 0, 165, 0), (34091, 35214, 0, 1, 1, 1, 0, 165, 0), (34091, 35209, 0, 1, 1, 1, 0, 164, 0);
