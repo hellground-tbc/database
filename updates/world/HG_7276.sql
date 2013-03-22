@@ -1,0 +1,1 @@
+UPDATE `gameobject` SET `position_x` = -22.163, `position_y` = -363.842, `position_z` = -31.523 WHERE `guid` = 10196362;
