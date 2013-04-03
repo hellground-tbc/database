@@ -1,0 +1,7 @@
+UPDATE `creature_template_addon` SET `bytes1` = '7' WHERE entry IN (21846,21859);
+UPDATE `creature_template` SET `AIName` = 'EventAI' WHERE entry IN (21846,21859);
+DELETE FROM `creature_ai_scripts` WHERE `id` IN (2184601,2184602,2185901,2185902);
+INSERT INTO `creature_ai_scripts` VALUES ('2184601', '21846', '8', '0', '100', '1', '39189', '-1', '0', '0', '11', '19629', '0', '31', '18', '33554434', '0', '0', '23', '1', '0', '0', 'Slain Auchenai Warrior - Cast Burn Corpse Visual and Set UnSelectable/UnAttackable Flag and Set Phase 1');
+INSERT INTO `creature_ai_scripts` VALUES ('2184602', '21846', '1', '1', '100', '1', '10000', '10000', '10000', '10000', '19', '33554434', '0', '0', '41', '0', '0', '0', '22', '0', '0', '0', 'Slain Auchenai Warrior - Remove UnSelectable and Unattackable Flags and Set Phase 0 and Despawn');
+INSERT INTO `creature_ai_scripts` VALUES ('2185901', '21859', '8', '0', '100', '1', '39189', '-1', '0', '0', '11', '19629', '0', '31', '18', '33554434', '0', '0', '23', '1', '0', '0', 'Slain Sha\'tar Vindicator - Cast Burn Corpse Visual and Set UnSelectable/UnAttackable Flag and Set Phase 1');
+INSERT INTO `creature_ai_scripts` VALUES ('2185902', '21859', '1', '1', '100', '1', '10000', '10000', '10000', '10000', '19', '33554434', '0', '0', '41', '0', '0', '0', '22', '0', '0', '0', 'Slain Sha\'tar Vindicator - Remove UnSelectable and Unattackable Flags and Set Phase 0 and Despawn');

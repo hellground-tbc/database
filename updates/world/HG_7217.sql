@@ -1,0 +1,1 @@
+update creature_ai_scripts set action1_param2=0 where id in (1980601,2201803)
