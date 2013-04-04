@@ -1,5 +1,5 @@
 DELETE FROM `event_scripts` WHERE (`id`='4884');
-DELETE FROM `creature` WHERE id IN (`9816`, `10316`);
+DELETE FROM `creature` WHERE id IN ('9816', '10316');
 
 UPDATE `creature_template` SET `unit_flags`='768' WHERE (`entry`='10316');
 UPDATE `creature_template` SET `minhealth`='74025', `maxhealth`='74025', `unit_flags`='33555200' WHERE (`entry`='9816');
