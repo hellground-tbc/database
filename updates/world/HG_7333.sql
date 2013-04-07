@@ -1,0 +1,1 @@
+update creature_template set ScriptName='npc_meridith_the_mermaiden' where entry=15526; 
