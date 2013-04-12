@@ -1,1 +1,0 @@
-update quest_template set RequiredMinRepValue=0 where entry in (6642,6643,6644,6645,6646)
