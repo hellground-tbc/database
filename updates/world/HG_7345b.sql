@@ -1,0 +1,2 @@
+UPDATE `event_scripts` SET `x`='-423', `y`='-2875', `z`='84' WHERE (`id`='2648') AND (`delay`='0') AND (`command`='10') AND (`datalong`='2707') AND (`datalong2`='9000000') AND (`dataint`='0') AND (`x`='-407') AND (`y`='-2862') AND (`z`='77.31') AND (`o`='5.87') LIMIT 1;
+UPDATE `creature_template` SET `scale`='5' WHERE (`entry`='2707');
