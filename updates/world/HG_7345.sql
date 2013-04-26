@@ -1,1 +1,1 @@
-Update access_requirement set item=0 where id=17
+Update access_requirement set item=0 where id=17;
