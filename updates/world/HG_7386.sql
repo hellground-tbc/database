@@ -1,0 +1,1 @@
+UPDATE spell_enchant_proc_data SET customChance = 20 WHERE entry in (563, 564, 1783, 2638, 2639);
