@@ -1,0 +1,1 @@
+INSERT INTO `creature_template_addon` (`entry`, `moveflags`) VALUES ('14941', '8388608');
