@@ -2356,3 +2356,6 @@ INSERT INTO `pool_template` VALUES ('50501', '1', 'Fishing Node');
 INSERT INTO `pool_template` VALUES ('50502', '1', 'Fishing Node');
 INSERT INTO `pool_template` VALUES ('50503', '1', 'Fishing Node');
 INSERT INTO `pool_template` VALUES ('50504', '1', 'Fishing Node');
+
+UPDATE `gameobject_template` SET `name` = 'Schooner Wreckage Pool' WHERE `entry` = 180662;
+UPDATE `gameobject_template` SET `name` = 'Waterlogged Wreckage Pool' WHERE `entry` = 180685;
