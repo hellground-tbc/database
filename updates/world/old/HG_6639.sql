@@ -1,0 +1,1 @@
+UPDATE spell_proc_event SET procFlags = 0x04000000, procEx = 0x0010000 WHERE entry = 32748;

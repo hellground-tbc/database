@@ -1,0 +1,1 @@
+INSERT INTO scripted_spell_id VALUES (27285, "spell_seed_of_corruption_proc");
