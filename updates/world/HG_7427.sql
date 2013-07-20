@@ -1,0 +1,3 @@
+update creature_template set AIName='', ScriptName='mob_coilfang_slavehandler' where entry=17959;
+insert into creature_template value (31000, 0, NULL, 16480, 11686, 16480, 11686, 'Slave pens slave dispenser',NULL ,NULL , 60, 60, 6900, 6900, 0, 0, 0, 0,114, 114, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 33555204, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, NULL, 0, 3, 0, 1, 0, 0, 130, 'npc_slave_pens_dispenser');
+insert into creature values (100001,31000,547,3,0,0,120,-132,-0.6,1.5,60,0,0,6900,0,0,0);
