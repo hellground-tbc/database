@@ -1,0 +1,1 @@
+UPDATE `script_texts` SET `content_default` = 'becomes enraged!' WHERE entry IN (-1564054);
