@@ -1,0 +1,1 @@
+UPDATE `command` SET `help`='Syntax: .modify fly #rate\r\nModify the speed of the selected player while flying to \"normal fly speed\"*rate. If no player is selected, modify your speed.\r\n#rate may range from 0.1 to 30.' WHERE `name`='modify fly';

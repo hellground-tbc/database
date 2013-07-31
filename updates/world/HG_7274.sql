@@ -1,0 +1,1 @@
+UPDATE spell_proc_event SET Spellfamilymask=27388806408 WHERE entry in (14186, 14190, 14193, 14194, 14195);

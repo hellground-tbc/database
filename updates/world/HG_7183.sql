@@ -1,0 +1,1 @@
+INSERT INTO `gameobject_scripts` (`id`, `delay`, `command`, `datalong`, `datalong2`, `dataint`, `x`, `y`, `z`, `o`) VALUES ('45315', '0', '9', '99885', '180', '0', '0', '0', '0', '0');

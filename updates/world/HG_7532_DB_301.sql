@@ -1,0 +1,1 @@
+UPDATE `creature_ai_scripts` SET `action2_type`='41', `action2_param1`='50000' WHERE `id`='2014301';
