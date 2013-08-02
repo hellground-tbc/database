@@ -1,0 +1,1 @@
+update creature_template set ScriptName = 'npc_gnomish_flame_turret' where entry = 17458;

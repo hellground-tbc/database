@@ -1,0 +1,4 @@
+﻿INSERT INTO `world`.`item_template` () VALUES (); 
+UPDATE `world`.`item_template` SET `entry` = '66616' , `class` = '4' WHERE `entry` = '0'; 
+UPDATE `world`.`item_template` SET `name` = 'Gamemaster\'s Stamina Trinket' WHERE `entry` = '66616'; 
+UPDATE `world`.`item_template` SET `displayid` = '45337' , `Quality` = '6' , `Flags` = '1' , `InventoryType` = '12' , `RequiredLevel` = '1' , `maxcount` = '2' , `stat_type1` = 'ITEM_MOD_STAMINA' , `stat_value1` = '32000' , `stat_type2` = 'ITEM_MOD_STAMINA' , `stat_value2` = '32000' , `stat_type3` = 'ITEM_MOD_STAMINA' , `stat_value3` = '32000' , `stat_type4` = 'ITEM_MOD_STAMINA' , `stat_value4` = '4000' , `armor` = '20000' , `holy_res` = '250' , `fire_res` = '250' , `nature_res` = '250' , `frost_res` = '250' , `shadow_res` = '250' , `arcane_res` = '250' , `bonding` = '1' , `description` = 'Makes mortalas a little bit more immortal!' , `Material` = '4' WHERE `entry` = '66616'; 

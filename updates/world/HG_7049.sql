@@ -1,0 +1,1 @@
+UPDATE `creature_template` SET `ScriptName` = 'npc_explosive_sheep' WHERE `entry` IN (2675,24715);
