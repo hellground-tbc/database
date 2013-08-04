@@ -1,0 +1,1 @@
+﻿UPDATE creature_template SET scale = 3.2 WHERE entry = 66710;
