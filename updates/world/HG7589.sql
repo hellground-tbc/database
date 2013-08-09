@@ -14,3 +14,4 @@ INSERT INTO `creature_loot_template` VALUES
 
 UPDATE `creature_template` SET `lootid` = '20653' WHERE `entry` = '20653';
 UPDATE `creature_template` SET `pickpocketloot` = '18732' WHERE `entry` = '20653';
+UPDATE `creature_template` SET `mechanic_immune_mask` = '1073725439' WHERE `entry` = '20657';
