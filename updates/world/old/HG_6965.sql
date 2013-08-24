@@ -1,0 +1,10 @@
+UPDATE `gameobject_template` SET `type` = '1' WHERE `entry` = '184073';
+UPDATE `gameobject_template` SET `flags` = '32' WHERE `entry` = '184073';
+UPDATE `gameobject_template` SET `data0` = '0' WHERE `entry` = '184073';
+UPDATE `gameobject_template` SET `data1` = '57' WHERE `entry` = '184073';
+UPDATE `gameobject_template` SET `data2` = '15728640' WHERE `entry` = '184073';
+UPDATE `gameobject_template` SET `data3` = '0' WHERE `entry` = '184073';
+UPDATE `gameobject_template` SET `data4` = '1' WHERE `entry` = '184073';
+UPDATE `gameobject_template` SET `ScriptName` = 'go_ethereal_teleport_pad' WHERE `entry` = '184073';
+DELETE FROM `creature` WHERE `guid`= '4268964';
+DELETE FROM `gameobject` WHERE `guid`= '25020';

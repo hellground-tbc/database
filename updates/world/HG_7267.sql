@@ -1,0 +1,1 @@
+UPDATE `quest_template` SET `SrcSpell` = 25678 WHERE `entry` = 8599;

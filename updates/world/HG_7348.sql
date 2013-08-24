@@ -1,0 +1,1 @@
+UPDATE creature_template SET dmgschool = 2 WHERE entry = 25166;
