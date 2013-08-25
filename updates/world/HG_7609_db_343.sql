@@ -1,0 +1,1 @@
+INSERT INTO `creature_loot_template` (`entry`, `item`, `ChanceOrQuestChance`) VALUES ('20731', '30415', '-100');
