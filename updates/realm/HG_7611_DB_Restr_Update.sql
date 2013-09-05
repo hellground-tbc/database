@@ -252,7 +252,8 @@ INSERT INTO `account_state` (`account_state_id`, `name`) VALUES
 INSERT INTO `client_os_version` VALUES
 (0, 'Unknown'),
 (1, 'Microsoft Windows'),
-(2, 'Apple Macintosh OSX');
+(2, 'Apple Macintosh OSX'),
+(3, 'Custom WoW Chat Client');
 
 INSERT INTO `expansion` VALUES
 (0, 'World of Warcraft'),
