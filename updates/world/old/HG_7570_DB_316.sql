@@ -1,1 +1,1 @@
-﻿UPDATE creature_template SET faction_A = 1859, faction_H = 1859 WHERE entry = 23197;
+UPDATE creature_template SET faction_A = 1859, faction_H = 1859 WHERE entry = 23197;
