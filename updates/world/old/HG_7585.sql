@@ -1,6 +1,6 @@
 DELETE FROM `creature_ai_scripts` WHERE `id` = 2088605;
 INSERT INTO `creature_ai_scripts` VALUES
-(2088605, 20886, 0, 0, 100, 7, 25500, 25500, 35000, 35000, 12, 20978, 0, 15000, 0, 0, 0, 0, 0, 0, 0, 0, 'Wrath-Scryer Soccothrates - Felfire Line Up')
+(2088605, 20886, 0, 0, 100, 7, 25500, 25500, 35000, 35000, 12, 20978, 0, 15000, 0, 0, 0, 0, 0, 0, 0, 0, 'Wrath-Scryer Soccothrates - Felfire Line Up');
 UPDATE `creature_template` SET `ScriptName` = 'npc_felfire_wave' WHERE `entry` = '20978';
 UPDATE `creature_template` SET `unit_flags` = '33554432' WHERE `entry` = '21625';
 UPDATE `creature_template` SET `flags_extra` = '130' WHERE `entry` = '21625';
