@@ -1,0 +1,1 @@
+ALTER TABLE `account` ADD COLUMN `gmlevel` SMALLINT(3) DEFAULT 0 NOT NULL AFTER `pass_hash`;
