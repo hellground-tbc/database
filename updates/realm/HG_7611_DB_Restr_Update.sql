@@ -113,8 +113,7 @@ CREATE TABLE IF NOT EXISTS `pattern_banned` (
 -- Update realmlist table
 ALTER TABLE `realmlist` RENAME `realms`;
 
-ALTER TABLE `realms` DROP KEY IF EXISTS name;
-ALTER TABLE `realms` DROP KEY IF EXISTS idx_name;
+ALTER TABLE `realms` DROP KEY idx_name;
 ALTER TABLE `realms`
   CHANGE `id` `realm_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
   MODIFY `name` VARCHAR(32) NOT NULL,
@@ -133,8 +132,7 @@ ALTER TABLE `realms`
 -- Update realmcharacters table
 ALTER TABLE `realmcharacters` RENAME `realm_characters`;
 
-ALTER TABLE `realm_characters` DROP KEY IF EXISTS `acctid`;
-ALTER TABLE `realm_characters` DROP KEY IF EXISTS `idx_acctid`;
+ALTER TABLE `realm_characters` DROP KEY `acctid`;
 ALTER TABLE `realm_characters`
   CHANGE `realmid` `realm_id` INT UNSIGNED NOT NULL,
   CHANGE `acctid` `account_id` INT UNSIGNED NOT NULL,
