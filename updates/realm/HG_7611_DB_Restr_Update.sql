@@ -67,19 +67,20 @@ CREATE  TABLE IF NOT EXISTS `account` (
     ON UPDATE NO ACTION
 ) ENGINE = InnoDB DEFAULT CHARACTER SET = utf8 COLLATE = utf8_unicode_ci;
 
--- Update account_login table
-ALTER TABLE account_login DROP PRIMARY KEY;
-ALTER TABLE account_login
-  CHANGE `id` `account_id` INT UNSIGNED NOT NULL,
-  CHANGE `logindate` `login_date` INT(11) NOT NULL,
-  MODIFY `ip` VARCHAR(16) NOT NULL,
-  MODIFY `local_ip` VARCHAR(16) NOT NULL,
-  ADD PRIMARY KEY (`account_id`, `login_date`),
-  ADD CONSTRAINT `FK_account_login_account_id` FOREIGN KEY `account_id` (`account_id`)
+-- Recreate account_login table
+ALTER TABLE account_login RENAME account_login_old;
+
+CREATE TABLE IF NOT EXISTS `account_login` (
+  `account_id` INT(11) UNSIGNED NOT NULL DEFAULT '0' COMMENT "Account Id",
+  `login_date` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ip` VARCHAR(30) NOT NULL,
+  `local_ip` VARCHAR(30) NOT NULL,
+  PRIMARY KEY (`account_id`, `login_date`),
+  CONSTRAINT `FK_account_login_account_id` FOREIGN KEY `account_id` (`account_id`)
     REFERENCES `account` (`account_id`)
     ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  ENGINE = InnoDB;
+    ON UPDATE CASCADE
+) ENGINE = INNODB DEFAULT CHARACTER SET = utf8 COLLATE = utf8_unicode_ci;
 
 -- Update ip_banned table
 ALTER TABLE ip_banned DROP PRIMARY KEY;
@@ -113,6 +114,7 @@ CREATE TABLE IF NOT EXISTS `pattern_banned` (
 -- Update realmlist table
 ALTER TABLE `realmlist` RENAME `realms`;
 
+
 ALTER TABLE `realms` DROP KEY idx_name;
 ALTER TABLE `realms`
   CHANGE `id` `realm_id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -129,25 +131,22 @@ ALTER TABLE `realms`
   ADD UNIQUE INDEX `name` (`name`),
   ENGINE = InnoDB;
 
--- Update realmcharacters table
-ALTER TABLE `realmcharacters` RENAME `realm_characters`;
+  -- Update realmcharacters table
+ALTER TABLE `realmcharacters` RENAME `realmcharacters_old`;
 
-ALTER TABLE `realm_characters` DROP KEY `acctid`;
-ALTER TABLE `realm_characters`
-  CHANGE `realmid` `realm_id` INT UNSIGNED NOT NULL,
-  CHANGE `acctid` `account_id` INT UNSIGNED NOT NULL,
-  CHANGE `numchars` `characters_count` TINYINT UNSIGNED NOT NULL DEFAULT 0,
-  ADD CONSTRAINT `FK_realm_characters_realm_id` FOREIGN KEY `realm_id` (`realm_id`)
+CREATE TABLE IF NOT EXISTS `realm_characters` (
+  `realm_id` INT UNSIGNED NOT NULL,
+  `account_id` INT UNSIGNED NOT NULL,
+  `characters_count` TINYINT UNSIGNED NOT NULL DEFAULT 0,
+  CONSTRAINT `FK_realm_characters_realm_id` FOREIGN KEY `realm_id` (`realm_id`)
     REFERENCES `realms`(`realm_id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
-  ADD CONSTRAINT `FK_realm_characters_account_id` FOREIGN KEY `account_id` (`account_id`)
+  CONSTRAINT `FK_realm_characters_account_id` FOREIGN KEY `account_id` (`account_id`)
     REFERENCES `account`(`account_id`)
     ON DELETE CASCADE
-    ON UPDATE CASCADE,
-  ENGINE = InnoDB;
-
--- Add new tables: account_permissions, account_punishment, account_support, account_session
+    ON UPDATE CASCADE
+) ENGINE = INNODB DEFAULT CHARACTER SET = utf8 COLLATE = utf8_unicode_ci;
 
 CREATE  TABLE IF NOT EXISTS `account_permissions` (
   `account_id` INT UNSIGNED NOT NULL,
@@ -172,7 +171,7 @@ CREATE  TABLE IF NOT EXISTS `account_punishment` (
   `punished_by` VARCHAR(45) NOT NULL ,
   `reason` VARCHAR(100) NOT NULL ,
   PRIMARY KEY (`account_id`, `punishment_type_id`, `punishment_date`) ,
-  CONSTRAINT `FKpunishment_type_id` FOREIGN KEY `punishment_type_id` (`punishment_type_id`)
+  CONSTRAINT `FK_punishment_type_id` FOREIGN KEY `punishment_type_id` (`punishment_type_id`)
     REFERENCES `punishment_type` (`punishment_type_id`)
     ON DELETE CASCADE
     ON UPDATE CASCADE,
@@ -274,6 +273,8 @@ INSERT INTO `locale` VALUES
 (7, 'esMX'),
 (8, 'ruRU');
 
+SET FOREIGN_KEY_CHECKS=0;
+
 -- Copy old patterns to new table
 INSERT INTO pattern_banned (`ip_pattern`, `local_ip_pattern`, `comment`)
     SELECT `ip_pattern`, `localip_pattern`, `comment` FROM pattern_banned_old;
@@ -296,6 +297,12 @@ INSERT INTO `account_punishment`
 -- Copy mutes
 INSERT INTO `account_punishment`
     SELECT `id`, 1, `mutedate`, `unmutedate`, `mutedby`, `mutereason` FROM `account_mute`;
+
+-- Copy account_login
+INSERT INTO `account_login` (`account_id`, `login_date`, `ip`, `local_ip`)
+    SELECT `id`, `logindate`, `ip`, `local_ip` FROM account_login_old;
+
+SET FOREIGN_KEY_CHECKS=1;
 
 -- Deactivate inactive bans
 UPDATE `account_punishment`
@@ -374,6 +381,7 @@ WHERE EXISTS (SELECT 1
 -- Cleanup
 DROP TABLE IF EXISTS `account_old`;
 DROP TABLE IF EXISTS `pattern_banned_old`;
+DROP TABLE IF EXISTS `pattern_login_old`;
 DROP TABLE IF EXISTS `account_banned`;
 DROP TABLE IF EXISTS `account_mute`;
 DROP TABLE IF EXISTS `account_access`;
@@ -381,6 +389,4 @@ DROP TABLE IF EXISTS `account_extend`;
 DROP TABLE IF EXISTS `account_groups`;
 DROP TABLE IF EXISTS `account_keys`;
 DROP TABLE IF EXISTS `blocked_ips`;
-DROP TABLE IF EXISTS `ip2nation`;
-DROP TABLE IF EXISTS `ip2nationCountries`;
 DROP TABLE IF EXISTS `online`;
