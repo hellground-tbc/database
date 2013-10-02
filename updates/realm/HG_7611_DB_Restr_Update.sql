@@ -170,6 +170,7 @@ CREATE  TABLE IF NOT EXISTS `account_punishment` (
   `expiration_date` INT(11) NOT NULL ,
   `punished_by` VARCHAR(45) NOT NULL ,
   `reason` VARCHAR(100) NOT NULL ,
+  `active` TINYINT(4) NOT NULL DEFAULT 1 ,
   PRIMARY KEY (`account_id`, `punishment_type_id`, `punishment_date`) ,
   CONSTRAINT `FK_punishment_type_id` FOREIGN KEY `punishment_type_id` (`punishment_type_id`)
     REFERENCES `punishment_type` (`punishment_type_id`)
@@ -292,11 +293,11 @@ UPDATE `account` SET `client_os_version_id` = 0 WHERE `client_os_version_id` > 2
 -- Copy bans
 
 INSERT INTO `account_punishment`
-    SELECT `id`, 2, `bandate`, `unbandate`, `bannedby`, `banreason` FROM `account_banned`;
+    SELECT `id`, 2, `bandate`, `unbandate`, `bannedby`, `banreason`, `active` FROM `account_banned`;
 
 -- Copy mutes
 INSERT INTO `account_punishment`
-    SELECT `id`, 1, `mutedate`, `unmutedate`, `mutedby`, `mutereason` FROM `account_mute`;
+    SELECT `id`, 1, `mutedate`, `unmutedate`, `mutedby`, `mutereason`, `active` FROM `account_mute`;
 
 -- Copy account_login
 INSERT INTO `account_login` (`account_id`, `login_date`, `ip`, `local_ip`)
