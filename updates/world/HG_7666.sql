@@ -1,0 +1,1 @@
+update creature set spawntimesecs= 604800 where id= 15690
