@@ -55,6 +55,7 @@ CREATE TABLE `account_login` (
   `login_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `ip` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `local_ip` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`account_id`,`login_date`),
   CONSTRAINT `FK_account_login_account_id` FOREIGN KEY (`account_id`) REFERENCES `account` (`account_id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
