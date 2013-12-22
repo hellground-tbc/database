@@ -1,0 +1,61 @@
+-- http://www.wowhead.com/npc=10617#comments
+-- add npc
+delete from creature where id=10617;
+UPDATE `creature_template` SET `MovementType`='2' WHERE (`entry`='10617');
+INSERT INTO `creature` VALUES ('1010', '10617', '1', '1', '0', '0', '-4992.81', '-2198.44', '-53.3663', '0.546462', '300', '0', '0', '787', '0', '0', '2');
+
+-- make waypoints . I used this scheme, which posted some player. http://forum.letswow.ru/index.php?app=core&module=attach&section=attach&attach_rel_module=post&attach_id=3389
+delete from creature_addon where guid=1010;
+INSERT INTO `creature_addon` (`guid`, `path_id`) VALUES ('1010', '10100');
+delete from waypoint_data where id=10100;
+
+INSERT INTO `waypoint_data` VALUES ('10100', '1', '-4920.43', '-2152.1', '-56.1251', '5', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '2', '-4936.38', '-2162.40', '-56.0967', '3', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '3', '-4902.43', '-2142.10', '-52.5229', '3', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '4', '-4885.74', '-2130.86', '-46.1246', '3', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '5', '-4860.89', '-2105.82', '-35.0168', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '6', '-4826.66', '-2052.07', '-40.5722', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '7', '-4795.21', '-1995.97', '-60.752', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '8', '-4811.51', '-1956.35', '-49.3779', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '9', '-4834.91', '-1936.4', '-44.9111', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '10', '-4874.74', '-1888.99', '-52.6291', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '11', '-4846.17', '-1820.53', '-52.8839', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '12', '-4798.11', '-1786.27', '-52.4597', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '13', '-4780.48', '-1775.28', '-47.0387', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '14', '-4801.34', '-1746.81', '-43.6567', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '15', '-4796.22', '-1698.48', '-42.6407', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '16', '-4814.33', '-1657.28', '-49.743', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '17', '-4798.5', '-1605.26', '-49.9417', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '18', '-4797.03', '-1537.9', '-46.3192', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '19', '-4763.12', '-1505.58', '-29.0315', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '20', '-4746.64', '-1491.47', '-31.6917', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '21', '-4720.12', '-1473.67', '-45.2863', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '22', '-4630.7', '-1406.15', '-50.7163', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '23', '-4625.65', '-1358.39', '-44.0717', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '24', '-4613.17', '-1332.98', '-42.265', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '25', '-4615.04', '-1292.3', '-50.8998', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '26', '-4636.14', '-1244.17', '-53.2201', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '27', '-4748.35', '-1265.66', '-52.9441', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '28', '-4774.77', '-1317.02', '-49.6398', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '29', '-4804.36', '-1365.49', '-54.4688', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '30', '-4846.4', '-1389.99', '-53.3714', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '31', '-4894.87', '-1416.51', '-52.0467', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '32', '-4894.09', '-1474.16', '-50.0658', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '33', '-4976.56', '-1542.47', '-48.0728', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '34', '-4967.9', '-1596.55', '-42.6418', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '35', '-4965.33', '-1636.08', '-45.4575', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '36', '-4941.54', '-1692.9', '-57.5118', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '37', '-4967.37', '-1724.21', '-61.945', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '38', '-4929.2', '-1768.96', '-50.5239', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '39', '-4903.39', '-1789.2', '-35.7991', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '40', '-4887.49', '-1800.36', '-37.4599', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '41', '-4857.61', '-1832.72', '-51.6265', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '42', '-4872.94', '-1896.41', '-52.7075', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '43', '-4833.68', '-1932.85', '-45.1199', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '44', '-4805.96', '-1964.51', '-52.406', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '45', '-4814.9', '-2028.81', '-49.6159', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '46', '-4841.18', '-2081.39', '-35.7246', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '47', '-4864.88', '-2110.99', '-36.2242', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '48', '-4904.59', '-2143.58', '-53.0826', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '49', '-4988.16', '-2193.22', '-52.967', '0', '1', '0', '100', '0');
+INSERT INTO `waypoint_data` VALUES ('10100', '50', '-5014.05', '-2217.7', '-53.3616', '0', '1', '0', '100', '0');
