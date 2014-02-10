@@ -1,1 +1,0 @@
-UPDATE `hellground_string` SET `content_default` = 'Player%s %s (guid: %u) Account: %s (id: %u) Email: %s Permissions Mask: %u Last IP: %s Last login: %s Latency: %ums' WHERE `entry` = '548';

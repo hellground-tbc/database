@@ -1,2 +1,0 @@
-UPDATE `quest_template` SET `ReqCreatureOrGOId2`='22138', `ReqCreatureOrGOCount2`='4' WHERE (`entry`='10808');
-UPDATE `gameobject` SET `position_x`='-4156.697', `position_y`='1986.929', `position_z`='61.188' WHERE (`guid`='99983');
