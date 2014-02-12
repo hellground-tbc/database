@@ -7,37 +7,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 /*Table structure for table `account` */
 
-DROP TABLE IF EXISTS `account`;
-
-CREATE TABLE `account` (
-  `account_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `username` varchar(16) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `pass_hash` char(40) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
-  `token_key` varchar(100) COLLATE utf8_unicode_ci DEFAULT '',
-  `join_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `registration_ip` varchar(16) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0.0.0.0',
-  `expansion_id` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `account_state_id` tinyint(3) unsigned NOT NULL DEFAULT '1',
-  `locale_id` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `failed_logins` int(10) unsigned NOT NULL DEFAULT '0',
-  `last_ip` varchar(16) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0.0.0.0',
-  `last_local_ip` varchar(16) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0.0.0.0',
-  `last_login` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `online` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `opcodes_disabled` int(10) unsigned NOT NULL DEFAULT '0',
-  `account_flags` int(10) unsigned NOT NULL DEFAULT '0',
-  `client_os_version_id` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`account_id`),
-  UNIQUE KEY `username` (`username`),
-  KEY `FK_account_state_id` (`account_state_id`),
-  KEY `FK_client_os_version_id` (`client_os_version_id`),
-  KEY `FK_expansion_id` (`expansion_id`),
-  CONSTRAINT `FK_account_state_id` FOREIGN KEY (`account_state_id`) REFERENCES `account_state` (`account_state_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
-  CONSTRAINT `FK_client_os_version_id` FOREIGN KEY (`client_os_version_id`) REFERENCES `client_os_version` (`client_os_version_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `FK_expansion_id` FOREIGN KEY (`expansion_id`) REFERENCES `expansion` (`expansion_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 /*Data for the table `account` */
 
 /*Table structure for table `account_friends` */
@@ -53,21 +22,6 @@ CREATE TABLE `account_friends` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 PACK_KEYS=0 COMMENT='Stores accounts for Refer-a-Friend System.';
 
 /*Data for the table `account_friends` */
-
-/*Table structure for table `account_login` */
-
-DROP TABLE IF EXISTS `account_login`;
-
-CREATE TABLE `account_login` (
-  `account_id` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Account Id',
-  `login_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `ip` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `local_ip` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`account_id`,`login_date`),
-  CONSTRAINT `FK_account_login_account_id` FOREIGN KEY (`account_id`) REFERENCES `account` (`account_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-/*Data for the table `account_login` */
 
 /*Table structure for table `account_login_old` */
 
@@ -85,52 +39,15 @@ CREATE TABLE `account_login_old` (
 
 /*Table structure for table `account_permissions` */
 
-DROP TABLE IF EXISTS `account_permissions`;
-
-CREATE TABLE `account_permissions` (
-  `account_id` int(10) unsigned NOT NULL,
-  `realm_id` int(10) unsigned NOT NULL,
-  `permission_mask` bigint(20) unsigned NOT NULL DEFAULT '1',
-  PRIMARY KEY (`account_id`,`realm_id`),
-  KEY `FK_account_permissions_realm_id` (`realm_id`),
-  CONSTRAINT `FK_account_permissions_account_id` FOREIGN KEY (`account_id`) REFERENCES `account` (`account_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_account_permissions_realm_id` FOREIGN KEY (`realm_id`) REFERENCES `realms` (`realm_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
 /*Data for the table `account_permissions` */
 
 /*Table structure for table `account_punishment` */
 
-DROP TABLE IF EXISTS `account_punishment`;
-
-CREATE TABLE `account_punishment` (
-  `account_id` int(10) unsigned NOT NULL,
-  `punishment_type_id` tinyint(3) unsigned NOT NULL,
-  `punishment_date` int(11) NOT NULL,
-  `expiration_date` int(11) NOT NULL,
-  `punished_by` varchar(45) NOT NULL,
-  `reason` varchar(100) NOT NULL,
-  `active` tinyint(4) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`account_id`,`punishment_type_id`,`punishment_date`),
-  KEY `FK_punishment_type_id` (`punishment_type_id`),
-  CONSTRAINT `FK_account_punishment_account_id` FOREIGN KEY (`account_id`) REFERENCES `account` (`account_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_punishment_type_id` FOREIGN KEY (`punishment_type_id`) REFERENCES `punishment_type` (`punishment_type_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `account_punishment` */
 
 /*Table structure for table `account_session` */
 
-DROP TABLE IF EXISTS `account_session`;
-
-CREATE TABLE `account_session` (
-  `account_id` int(10) unsigned NOT NULL,
-  `session_key` varchar(80) NOT NULL DEFAULT '',
-  `v` varchar(80) NOT NULL DEFAULT '',
-  `s` varchar(80) NOT NULL DEFAULT '',
-  PRIMARY KEY (`account_id`),
-  CONSTRAINT `FK_account_session_account_id` FOREIGN KEY (`account_id`) REFERENCES `account` (`account_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `account_session` */
 
@@ -152,14 +69,6 @@ insert  into `account_state`(`account_state_id`,`name`) values (3,'Frozen');
 
 /*Table structure for table `account_support` */
 
-DROP TABLE IF EXISTS `account_support`;
-
-CREATE TABLE `account_support` (
-  `account_id` int(10) unsigned NOT NULL,
-  `support_points` int(10) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`account_id`),
-  CONSTRAINT `FK_account_support_account_id` FOREIGN KEY (`account_id`) REFERENCES `account` (`account_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `account_support` */
 
@@ -277,20 +186,6 @@ CREATE TABLE `punishment_type` (
 insert  into `punishment_type`(`punishment_type_id`,`name`) values (1,'Account mute');
 insert  into `punishment_type`(`punishment_type_id`,`name`) values (2,'Account ban');
 
-/*Table structure for table `realm_characters` */
-
-DROP TABLE IF EXISTS `realm_characters`;
-
-CREATE TABLE `realm_characters` (
-  `realm_id` int(10) unsigned NOT NULL,
-  `account_id` int(10) unsigned NOT NULL,
-  `characters_count` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  KEY `FK_realm_characters_realm_id` (`realm_id`),
-  KEY `FK_realm_characters_account_id` (`account_id`),
-  CONSTRAINT `FK_realm_characters_account_id` FOREIGN KEY (`account_id`) REFERENCES `account` (`account_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_realm_characters_realm_id` FOREIGN KEY (`realm_id`) REFERENCES `realms` (`realm_id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
 /*Data for the table `realm_characters` */
 
 /*Table structure for table `realmcharacters_old` */
@@ -330,6 +225,81 @@ CREATE TABLE `realms` (
 
 /*Table structure for table `unqueue_account` */
 
+DROP TABLE IF EXISTS `account`;
+
+CREATE TABLE `account` (
+  `account_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(16) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `pass_hash` char(40) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `token_key` varchar(100) COLLATE utf8_unicode_ci DEFAULT '',
+  `join_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `registration_ip` varchar(16) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0.0.0.0',
+  `expansion_id` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `account_state_id` tinyint(3) unsigned NOT NULL DEFAULT '1',
+  `locale_id` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `failed_logins` int(10) unsigned NOT NULL DEFAULT '0',
+  `last_ip` varchar(16) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0.0.0.0',
+  `last_local_ip` varchar(16) COLLATE utf8_unicode_ci NOT NULL DEFAULT '0.0.0.0',
+  `last_login` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `online` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `opcodes_disabled` int(10) unsigned NOT NULL DEFAULT '0',
+  `account_flags` int(10) unsigned NOT NULL DEFAULT '0',
+  `client_os_version_id` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`account_id`),
+  UNIQUE KEY `username` (`username`),
+  KEY `FK_account_state_id` (`account_state_id`),
+  KEY `FK_client_os_version_id` (`client_os_version_id`),
+  KEY `FK_expansion_id` (`expansion_id`),
+  CONSTRAINT `FK_account_state_id` FOREIGN KEY (`account_state_id`) REFERENCES `account_state` (`account_state_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT `FK_client_os_version_id` FOREIGN KEY (`client_os_version_id`) REFERENCES `client_os_version` (`client_os_version_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `FK_expansion_id` FOREIGN KEY (`expansion_id`) REFERENCES `expansion` (`expansion_id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/*Table structure for table `account_login` */
+DROP TABLE IF EXISTS `account_punishment`;
+
+CREATE TABLE `account_punishment` (
+  `account_id` int(10) unsigned NOT NULL,
+  `punishment_type_id` tinyint(3) unsigned NOT NULL,
+  `punishment_date` int(11) NOT NULL,
+  `expiration_date` int(11) NOT NULL,
+  `punished_by` varchar(45) NOT NULL,
+  `reason` varchar(100) NOT NULL,
+  `active` tinyint(4) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`account_id`,`punishment_type_id`,`punishment_date`),
+  KEY `FK_punishment_type_id` (`punishment_type_id`),
+  CONSTRAINT `FK_account_punishment_account_id` FOREIGN KEY (`account_id`) REFERENCES `account` (`account_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_punishment_type_id` FOREIGN KEY (`punishment_type_id`) REFERENCES `punishment_type` (`punishment_type_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `account_login`;
+
+CREATE TABLE `account_login` (
+  `account_id` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Account Id',
+  `login_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `ip` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `local_ip` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`account_id`,`login_date`),
+  CONSTRAINT `FK_account_login_account_id` FOREIGN KEY (`account_id`) REFERENCES `account` (`account_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/*Table structure for table `realm_characters` */
+
+DROP TABLE IF EXISTS `realm_characters`;
+
+CREATE TABLE `realm_characters` (
+  `realm_id` int(10) unsigned NOT NULL,
+  `account_id` int(10) unsigned NOT NULL,
+  `characters_count` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  KEY `FK_realm_characters_realm_id` (`realm_id`),
+  KEY `FK_realm_characters_account_id` (`account_id`),
+  CONSTRAINT `FK_realm_characters_account_id` FOREIGN KEY (`account_id`) REFERENCES `account` (`account_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_realm_characters_realm_id` FOREIGN KEY (`realm_id`) REFERENCES `realms` (`realm_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+/*Data for the table `account_login` */
+
 DROP TABLE IF EXISTS `unqueue_account`;
 
 CREATE TABLE `unqueue_account` (
@@ -338,6 +308,39 @@ CREATE TABLE `unqueue_account` (
   `comment` text,
   PRIMARY KEY (`accid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+
+DROP TABLE IF EXISTS `account_support`;
+
+CREATE TABLE `account_support` (
+  `account_id` int(10) unsigned NOT NULL,
+  `support_points` int(10) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`account_id`),
+  CONSTRAINT `FK_account_support_account_id` FOREIGN KEY (`account_id`) REFERENCES `account` (`account_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `account_session`;
+
+CREATE TABLE `account_session` (
+  `account_id` int(10) unsigned NOT NULL,
+  `session_key` varchar(80) NOT NULL DEFAULT '',
+  `v` varchar(80) NOT NULL DEFAULT '',
+  `s` varchar(80) NOT NULL DEFAULT '',
+  PRIMARY KEY (`account_id`),
+  CONSTRAINT `FK_account_session_account_id` FOREIGN KEY (`account_id`) REFERENCES `account` (`account_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+DROP TABLE IF EXISTS `account_permissions`;
+
+CREATE TABLE `account_permissions` (
+  `account_id` int(10) unsigned NOT NULL,
+  `realm_id` int(10) unsigned NOT NULL,
+  `permission_mask` bigint(20) unsigned NOT NULL DEFAULT '1',
+  PRIMARY KEY (`account_id`,`realm_id`),
+  KEY `FK_account_permissions_realm_id` (`realm_id`),
+  CONSTRAINT `FK_account_permissions_account_id` FOREIGN KEY (`account_id`) REFERENCES `account` (`account_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `FK_account_permissions_realm_id` FOREIGN KEY (`realm_id`) REFERENCES `realms` (`realm_id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `unqueue_account` */
 
