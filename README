@@ -1,0 +1,19 @@
+Database Repository for HellGround Core Project.
+
+Folders:
+dbcs - can contain dbc files converted to sql format for simplier access (can be helpfull while fixing something)
+structures - contains sql files with databases structures and data updated to specific core revision (rev number is in struct_revisions text file)
+tools - contains various sql tools
+updates - contains updates to specific database
+updates/*/old  - contains already applied updates to the base file (structures/*.sql or world.sql)
+World database located in structures is an old dump and will not be updated by replacing the file.
+To keep updated please check downloads tab. The filename contains core revision (bigger number) and db revision (lower number).
+
+
+Changes linked with core will be still named as HG_corerev.sql
+Structural changes would be named like this HG_corerev_tablename.sql
+For DB only changes that do NOT require core changes mark as: HG_corerev_DB_dbrev.sql
+If there is no new rev in core repository use the last one, the core rev number is important cause we also need a exact execution order also for DB only Updates.
+Example: Core Rev xxxx changes structure of the World DB we need to execute db only changes on this table in the right order, else we have execution errors.
+This makes more easy to use script to combine all updates to one file.
+

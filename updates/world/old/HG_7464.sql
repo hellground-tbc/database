@@ -1,0 +1,1 @@
+update creature set spawntimesecs=604800 where id in (15339,15340,15341,15348,15369,15370);

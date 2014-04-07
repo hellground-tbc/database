@@ -1,0 +1,1 @@
+update creature_template set faction_A=35, faction_H=35 where entry=16781;

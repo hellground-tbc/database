@@ -1,0 +1,1 @@
+update creature_template set minlevel = 70, maxlevel = 70 where entry = 22335;
