@@ -1,0 +1,2 @@
+update hellground_string set content_default = '|cff00ff00Anticheat report - possible fly cheat:|r |cffff00ff[|Hplayer:%s|h%s|h] x%u|r' where entry = 11011;
+update hellground_string set content_default = '|cff00ff00Anticheat report - possible water walk cheat:|r |cffff00ff[|Hplayer:%s|h%s|h] x%u|r' where entry = 11013;
