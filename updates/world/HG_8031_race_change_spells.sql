@@ -1,4 +1,4 @@
-CREATE  TABLE `world`.`race_change_spells` (
+CREATE TABLE `race_change_spells` (
   `race` TINYINT UNSIGNED NOT NULL ,
   `class` TINYINT UNSIGNED NOT NULL ,
   `spell` MEDIUMINT UNSIGNED NOT NULL ,
@@ -64,4 +64,4 @@ insert into race_change_spells values
 (10,9,669),(10,9,813),(10,9,822),(10,9,28730),(10,9,28734),(10,9,28877),
 
 (4,11,668),(4,11,671),(4,11,20580),(4,11,20582),(4,11,20583),(4,11,20585),(4,11,21009),
-(6,11,669),(6,11,670),(6,11,20549),(6,11,20550),(6,11,20551),(6,11,20552)
+(6,11,669),(6,11,670),(6,11,20549),(6,11,20550),(6,11,20551),(6,11,20552);
